@@ -71,3 +71,31 @@ def create_event_and_venue(event_form, venue_form):
     event.organiser_email = 'ross@mozillafoundation.org' # nasty temp hack while resolving some other email-related things
     event.save()
     return (event, venue)
+
+
+def bsd_create(request):
+    return jingo.render(request, 'events/bsd/create_1.html', {})
+
+def bsd_create_user(request):
+    return jingo.render(request, 'events/bsd/create_user.html', {})
+
+def bsd_create_details(request):
+    return jingo.render(request, 'events/bsd/create_2.html', {})
+
+def bsd_share(request):
+    return jingo.render(request, 'events/bsd/share.html', {})
+
+def bsd_manage(request):
+    return jingo.render(request, 'events/bsd/manage.html', {})
+
+def bsd_invite(request):
+    return jingo.render(request, 'events/bsd/invite.html', {})
+
+def bsd_my(request):
+    return jingo.render(request, 'events/bsd/myevents.html', {})
+
+def bsd_detail(request):
+    return jingo.render(request, 'events/bsd/detail.html', {})
+
+def bsd_rsvp_save(request):
+    return jingo.render(request, 'events/bsd/rsvp_save.html', {})

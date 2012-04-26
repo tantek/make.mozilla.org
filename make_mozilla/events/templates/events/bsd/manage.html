@@ -1,0 +1,104 @@
+{% extends "events/base.html" %}
+
+{% block site_css %}
+    {{ css('bsd_hacks') }}
+   	<link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/skin.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/event2/frontend.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/css/jquery_ui_reset.css" type="text/css" />
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/bsd.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/yui/build/animation/animation-min.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/modules/event2/javascript/event_manage.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+<div id="SKIN" class="module_event2">
+
+
+
+<div class="basic container">
+
+    <div id="control_set">
+        <h1>Event Central</h1>
+        <div id="account_actions">
+                            <span id="login_status">You are logged in as rossbruniges@gmail.com<span class="delimiter">|</span></span>
+                <a href="/page/user/logout?successurl=L3BhZ2UvZXZlbnQvbWFuYWdlL3J0ZA==&_h=_XYGUYPvLYjK7Sr_BWMn5rvBbLc">Logout</a><span class="delimiter">|</span>
+            
+            <a href="/page/event/search_simple">Find An Event</a>
+
+                      <span class="delimiter">|</span>
+           <a href="/page/event/create">Plan An Event</a>
+
+           <span class="delimiter">|</span>
+           <a href="/page/event/myevents">Manage Your Events</a>
+           
+                                </div>
+    </div>
+    
+    <div class="main">
+<div id="eventdetail">
+  <h2 id="sectionheader">Event Details</h2>
+
+          
+      <div class="detailtable_container">
+  
+  <table id="detailtable">
+            <tr>
+      <th class="form_label">Event Name:</th>
+      <td>Strawberry jam</td>
+    </tr>
+            <tr>
+      <th class="form_label">Description:</th>
+      <td><p>I like jam, and I like toast</p></td>
+    </tr>
+        <tr>
+      <th class="form_label"> Time:</th>
+      <td>
+                  Wednesday, May 2, 2012 4:00 PM - 9:00 PM GMT+00:00                  </td>
+    </tr>
+    <tr>
+      <th class="form_label">Host:</th>
+      <td>Ross Bruniges</td>
+    </tr>
+        <tr>
+      <th class="form_label" valign="top">Location:</th>
+      <td><div class="location">The house of Ross (Beverly Hills, VI)
+
+          <div class="address">
+                                    Beverly Hills, VI 90210
+          </div>
+
+                </div></td>
+    </tr>
+                      </table>
+</div>
+  <h2 id="sectionheader">Event Attendees</h2>
+  <div class="form_button_group">
+            <fieldset>
+
+                            <input type="button" value="Send Invitations" onclick="location.href='/page/event/invite/rtd';" />
+                                </fieldset>
+      </div>
+
+  
+            <h2 class="dayheader">Wednesday, May 2, 2012</h2>
+
+                    <p class="day_attendee_count">
+                                    There are no RSVPs for this event.
+                                                    (max of 40)
+                            </p>
+        
+               </div>
+
+
+    </div><!-- div.main -->
+
+</div><!-- div.basic -->
+
+</div><!-- div#SKIN -->
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+    {{ js('bsd_hacks') }}
+{% endblock %}

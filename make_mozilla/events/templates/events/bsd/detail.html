@@ -1,0 +1,168 @@
+{% extends "events/base.html" %}
+
+{% block site_css %}
+    {{ css('bsd_hacks') }}
+   	<script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/utils/showhide.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/bsd.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/yui/build/animation/animation-min.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/modules/event2/javascript/event.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/modules/event2/javascript/event_rsvp_shift.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/skin.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/event2/frontend.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/css/jquery_ui_reset.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div id="SKIN" class="module_event2">
+
+
+
+<div class="basic container">
+
+    <div id="control_set">
+        <h1>Event Central</h1>
+        <div id="account_actions">
+                            <span id="login_status">You are logged in as rossbruniges@gmail.com<span class="delimiter">|</span></span>
+                <a href="/page/user/logout?successurl=L3BhZ2UvZXZlbnQvZGV0YWlsL3J0dg==&_h=XwqB3K4Tf1KL5DoZeoDE-arw57w">Logout</a><span class="delimiter">|</span>
+            
+            <a href="/page/event/search_simple">Find An Event</a>
+
+                      <span class="delimiter">|</span>
+           <a href="/page/event/create">Plan An Event</a>
+
+           <span class="delimiter">|</span>
+           <a href="/page/event/myevents">Manage Your Events</a>
+           
+                                </div>
+    </div>
+    
+    <div class="main">
+<div id="eventdetail" class="">
+  <div id="event_detail_xml_link">
+    <a href="/page/event/detail/rtv?mime=application/vnd.google-earth.kml+xml&amp;format=kml&amp;wrap=no"><img src="https://donate.mozilla.org/images/kml.gif" class="rssimg" title="KML feed for this event" alt="KML feed for this event" /></a>
+    <a href="/page/event/detail/rtv?mime=text/xml&amp;format=commons_rss&amp;wrap=no"><img src="https://donate.mozilla.org/images/xml.gif" class="rssimg" title="RSS feed for this event" alt="RSS feed for this event" /></a>
+    <a href="/page/event/detail/rtv?mime=text/calendar&amp;format=ical&amp;wrap=no"><img src="https://donate.mozilla.org/images/ical.gif" class="rssimg" title="iCal file for this event" alt="iCal file for this event" /></a>
+  </div>
+
+  
+  <h2 id="sectionheader">The Details</h2>
+
+  <div class="title">
+  Ross&#039; popcorn experience
+    <span class="type">(Pop Up)</span>
+    </div>
+
+  <div class="description"><p>Blah blah blah - blah blah blah</p></div>
+        
+      <div class="detailtable_container">
+  
+  <table id="detailtable">
+                <tr>
+      <th class="form_label"> Time:</th>
+      <td>
+                  Thursday, May 24, 2012 GMT+00:00                  </td>
+    </tr>
+    <tr>
+      <th class="form_label">Host:</th>
+      <td>Ross Bruniges</td>
+    </tr>
+        <tr>
+      <th class="form_label" valign="top">Location:</th>
+      <td><div class="location">Mozilla London (London, London)
+
+          <div class="address">
+            101 St Martins Lane<br />                        London, London SE24 9HH
+          </div>
+
+                    <div class="maplinks">
+            Maps:
+            <ul>
+              <li><a href="http://maps.google.com/maps?q=101+St+Martins+Lane+London++GB+SE24+9HH" target="_new">Google Maps</a></li>
+              <li><a href="http://www.mapquest.com/maps/map.adp?address=101+St+Martins+Lane&amp;city=London&amp;zipcode=SE24+9HH&amp;country=GB&amp;cid=lfmaplink" target="_new">MapQuest</a></li>
+              <li><a href="http://us.rd.yahoo.com/maps/us/insert/Tmap/extmap/*-http://maps.yahoo.com/maps_result?addr=101+St+Martins+Lane&amp;csz=SE24+9HH&amp;country=gb" target="_new">Yahoo! Maps</a></li>
+            </ul>
+          </div>
+                </div></td>
+    </tr>
+                      </table>
+</div>
+    <div id="rsvp_container">
+  
+            <a name="rsvp"></a><h2 id="sectionheader">Signup for 'Ross' popcorn experience'</h2>
+
+                    <table id="signup"><tr><td>
+                            <form  action="https://donate.mozilla.org/page/event/detail/rtv" method="post" name="event_rsvp" id="event_rsvp">
+                
+
+                <table>
+                    <tr>
+                        <th>Will you attend: <select onchange="if (this.value == 0) {
+                                     document.event_rsvp.guests.value = 0;
+                                     if(document.event_rsvp.pledge_amt) {document.event_rsvp.pledge_amt.value = '';}
+                                 } else if (this.value == 1) {
+                                     if (document.event_rsvp.guests.value == 0) { document.event_rsvp.guests.value = 1;}
+                                     if (document.event_rsvp.pledge_amt &amp;&amp; document.event_rsvp.pledge_amt.value.length == 0) {
+                                         document.event_rsvp.pledge_amt.value=''
+                                     }
+                                 }" name="will_attend">
+  <option value="1">Yes, I will attend.</option>
+  <option value="0">No, I will not attend.</option>
+</select></th>
+                    </tr>
+                                    </table>
+
+                
+                <table id="signupform">
+                                       <tr>
+                        <th>
+                            How many attendees total: <input size="3" name="guests" type="text" value="1" /> <span class="explain">(incl. yourself)</span>                        </th>
+                    </tr>
+                                                                                                    <tr>
+                        <th>Add a comment: (optional)</th>
+                    </tr>
+                    <tr>
+                        <td><textarea rows="5" cols="40" name="comment"></textarea></td>
+                    </tr>
+                                            <tr>
+                            <td class="explain">Your comment will be sent to the event host.</td>
+                        </tr>
+                                                            <tr>
+                                                <td class="button"><input type="submit" value="Next &gt;&gt;" /></td>
+                                            </tr>
+                </table>
+                </form>
+                    </td></tr></table>        </div><!-- rsvp_container -->
+  
+      <div id="otherrsvps_container">
+      <h2 id="sectionheader">Other Signups</h2>
+      <div id="otherrsvps">
+                    
+                      <p id="count">
+                          0 people have signed up to attend this event
+            
+                          <br/>The capacity limit is 100 attendees.
+                        </p>
+
+            
+          
+      </div>
+    </div> <!-- otherrsvps_container -->
+  
+</div><!-- eventdetail -->
+
+
+<br clear="both" />
+
+    </div><!-- div.main -->
+
+</div><!-- div.basic -->
+</div><!-- div#SKIN -->
+<div id="extra">
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+    {{ js('bsd_hacks') }}
+{% endblock %}

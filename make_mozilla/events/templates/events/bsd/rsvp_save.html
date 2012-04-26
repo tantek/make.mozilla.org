@@ -1,0 +1,269 @@
+{% extends "events/base.html" %}
+
+{% block site_css %}
+    {{ css('bsd_hacks') }}
+   	<link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/skin.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/event2/frontend.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/css/jquery_ui_reset.css" type="text/css" />
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/bsd.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/jquery/ui/jquery-ui-1.7.2.custom.min.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/json2.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/mixin/getVar.js" type="text/javascript"></script><script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/jquery/dataTables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/dataTable.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/CloudspongeLoader.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge/LogoSetter.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge/Loader.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge/LoaderLoader.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge/Link.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge/LinkLoader.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge/LoginForm.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/Core/widget/Cloudsponge/LoginFormLoader.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/jquery/jquery-bsdNoConflict.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+<div id="SKIN" class="module_event2">
+
+
+
+<div class="basic container">
+
+    <div id="control_set">
+        <h1>Event Central</h1>
+        <div id="account_actions">
+                            <span id="login_status">You are logged in as rossbruniges@gmail.com<span class="delimiter">|</span></span>
+                <a href="/page/user/logout?successurl=L3BhZ2UvZXZlbnQvcnN2cF9zYXZl&_h=5w7BjTeAM6s9lCpKq-LkhsgofkY">Logout</a><span class="delimiter">|</span>
+            
+            <a href="/page/event/search_simple">Find An Event</a>
+
+                      <span class="delimiter">|</span>
+           <a href="/page/event/create">Plan An Event</a>
+
+           <span class="delimiter">|</span>
+           <a href="/page/event/myevents">Manage Your Events</a>
+           
+                                </div>
+    </div>
+    
+    <div class="main">
+<div id="eventdetail">
+      <h2 id="sectionheader">You Have Signed Up...</h2>
+    <p class="subhead">You have successfully signed  up for the following event:</p>
+  
+            
+      <div class="detailtable_container">
+  
+  <table id="detailtable">
+        <tr>
+      <th class="form_label">Attendee Name:</th>
+      <td>Ross Bruniges</td>
+    </tr>
+            <tr>
+      <th class="form_label">Event Name:</th>
+      <td>Test RSS links</td>
+    </tr>
+            <tr>
+      <th class="form_label">Description:</th>
+      <td><p>An event that I'm running but don't want to appear in public searches....</p></td>
+    </tr>
+        <tr>
+      <th class="form_label"> Time:</th>
+      <td>
+                  Wednesday, May 30, 2012 12:00 PM - 1:00 PM GMT+00:00                  </td>
+    </tr>
+    <tr>
+      <th class="form_label">Host:</th>
+      <td>Ross Bruniges</td>
+    </tr>
+        <tr>
+      <th class="form_label" valign="top">Location:</th>
+      <td><div class="location">My House (London, London)
+
+          <div class="address">
+            8 Donne Court<br />            Burbage Road<br />            London, London SE24 9HH
+          </div>
+
+                </div></td>
+    </tr>
+        <tr>
+      <th class="form_label">Directions:</th>
+      <td>Herne Hill train station is best</td>
+    </tr>
+                      </table>
+</div>
+      <p id="homepagelink">
+              <a href="javascript: void(0);" onclick="window.print();">Print This Page</a>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<a href="/page/event/myevents">View All Your Event Signups</a>
+          </p>
+  </div>
+
+        <div id="inviteform">
+
+<form  action="/page/event/rsvp_save" method="post" name="invite_form" id="invite_form">
+
+<input id="bsd_drl" name="bsd_drl" type="hidden" value="" />
+
+
+    <h3>Invite Your Friends. . .</h3>
+
+
+<div class="table_container">
+    <table id="invitetable">
+        <tr>
+            <td colspan="2" class="invitedesc">
+                                    Fill out the form below to send invitations to your event.  Just enter email addresses into the 'To' box and hit 'Send Invitations'.
+                                            </td>
+        </tr>
+        <tr>
+            <th class="form_label" valign="top">To:</th>
+            <td>
+                <div id="invite_table" style="padding: 4px; width: 90%;"><textarea rows="8" cols="25" class="contact_importer_email" id="bsd-event-invite-to" name="to"></textarea></div>
+                <span class="instructions"><strong>(Enter one address per line, up to 15 addresses)</strong></span>
+                                                            <link type="text/css" rel="stylesheet" href="https://donate.mozilla.org/css/core.css" />
+<link type="text/css" rel="stylesheet" href="https://donate.mozilla.org/ext/jquery/ui/css/smoothness/jquery-ui-1.7.2.custom.css" />
+<link type="text/css" rel="stylesheet" href="https://donate.mozilla.org/css/Core/contactimporter.css" />
+
+<div id="bsd-contactImporter-invite" title="Load Contacts From Your Email Account" class="bsd-contactImporter">
+
+    <div id='cs_container_frame' name='cs_container_frame'></div>
+    
+<div class='bsd-contactImporter-loading'>
+    <div class='bsd-contactImporter-logo'></div>
+    <div class="loadingMessage">
+        <a href='#' class='signInLink'>Sign in</a> <img src="/images/ajax-loader.gif" alt="">
+    </div>
+</div>
+
+    <div class='bsd-contactImporter-list'>
+        <h2>Choose your address book</h2>
+        <ul>
+                            <li><div class="bsd-contactImporter-link bsd-contactImporter-gmail">
+    <input type="hidden" value='{"service":"gmail","requestType":2}' class="link-settings">
+    <a href="#">Gmail</a>
+</div>
+</li>
+                            <li><div class="bsd-contactImporter-link bsd-contactImporter-yahoo">
+    <input type="hidden" value='{"service":"yahoo","requestType":2}' class="link-settings">
+    <a href="#">Yahoo</a>
+</div>
+</li>
+                            <li><div class="bsd-contactImporter-link bsd-contactImporter-windowslive">
+    <input type="hidden" value='{"service":"windowslive","requestType":2}' class="link-settings">
+    <a href="#">Windows Live/Hotmail/MSN</a>
+</div>
+</li>
+                            <li><div class="bsd-contactImporter-link bsd-contactImporter-aol">
+    <input type="hidden" value='{"service":"aol","requestType":1}' class="link-settings">
+    <a href="#">AOL</a>
+</div>
+</li>
+                            <li><div class="bsd-contactImporter-link bsd-contactImporter-plaxo">
+    <input type="hidden" value='{"service":"plaxo","requestType":1}' class="link-settings">
+    <a href="#">Plaxo</a>
+</div>
+</li>
+                    </ul>
+    </div>
+
+    
+<div class="bsd-contactImporter-login">
+    <h2>Login</h2>
+    <a href='#' class='backLink'>Back</a>
+    <div class="clear"></div>
+    <div class='bsd-contactImporter-logo'></div>
+
+        <fieldset>
+        <input type='hidden' name='contactImporter-service' id='contactImporter-service' />
+        <input type='hidden' name='contactImporter-requestType' id='contactImporter-requestType' value='1' />
+        <div class="loginForm-errors">
+            <span class="errors-required">Email address and password is required</span>
+        </div>
+        <label for="contactImporter-username">Email Address:</label>
+        <input type="text" name="contactImporter-username" id="contactImporter-username" />
+        <div class="clear"></div>
+        <label for="contactImporter-pw">Password:</label>
+        <input type="password" name="contactImporter-pw" id="contactImporter-pw" />
+        <div class="clear"></div>
+
+        <div class="bsd-contactImporter-loginButtonContainer">
+            <input type="submit" id="contactImporter-loginButton" class="bsd-linkButton ui-button ui-state-default ui-corner-all" value="Next" />
+        </div>
+        </fieldset>
+</div>
+
+    <div class="bsd-contactImporter-contacts">
+        <h2>Choose your contacts</h2>
+    </div>
+
+    <div class="bsd-contactImporter-loadContactsButton">
+        <input type="button" id="bsd-contactImporter-load" class="bsd-linkButton ui-button ui-state-default ui-corner-all" value="Load Contacts" />
+    </div>
+</div>
+
+<div id="contact_importer_button_container">
+    <a id="contact_importer_button" class="ui-state-default" href="#bsd-event-invite-to">Load Contacts From Your Email Account</a>
+</div>
+
+                                                </td>
+        </tr>
+        <tr>
+            <th class="form_label">From:</th>
+            <td>Ross Bruniges &lt;rossbruniges@gmail.com&gt;</td>
+        </tr>
+    
+            
+        <tr>
+            <th class="form_label">Subject:</th>
+            <td><input size="35" name="subject" type="text" value="You're Invited!" /></td>
+        </tr>
+    
+            
+        <tr>
+            <th>&nbsp;</th>
+            <td class="form_label">The following will appear at the top of the invitation (above your Personal Message):</td>
+        </tr>
+        <tr>
+            <th>&nbsp;</th>
+            <td><div id="fixed_body">Ross Bruniges has sent you an invitation to 'Test RSS<br />
+links' -- click here to view the invitation and submit<br />
+your response: <br />
+ <br />
+  https://donate.mozilla.org/page/event/detail/rtj
+<input type="hidden" name="fixed_body" value="Ross Bruniges has sent you an invitation to 'Test RSS
+links' -- click here to view the invitation and submit
+your response: 
+ 
+  https://donate.mozilla.org/page/event/detail/rtj" /></div></td>
+        </tr>
+        <tr>
+            <th class="form_label" valign="top">Personal Message: <span class="instructions">(optional)</span></th>
+            <td><textarea rows="8" cols="50" name="body">You've been invited to attend Test RSS links.  Go to https://donate.mozilla.org/page/event/detail/rtj#rsvp to RSVP.</textarea></td>
+        </tr>
+    
+            
+        <tr>
+            <td>&nbsp;</td>
+            <td class="invitebutton">
+                <input type="submit" value="Send Invitations" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+</form>
+
+</div>
+
+
+    </div><!-- div.main -->
+
+</div><!-- div.basic -->
+
+</div><!-- div#SKIN -->
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+    {{ js('bsd_hacks') }}
+{% endblock %}

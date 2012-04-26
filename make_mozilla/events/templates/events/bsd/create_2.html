@@ -1,0 +1,1249 @@
+{% extends "events/base.html" %}
+
+{% block site_css %}
+    {{ css('bsd_hacks') }}
+   	<link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/skins/default/skin.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/skins/default/event2/frontend.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/css/jquery_ui_reset.css" type="text/css" />
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/javascript/bsd.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">!window.jQuery && document.write(unescape('%3Cscript src="/ext/jquery/jquery-1.4.1.min.js"%3E%3C/script%3E'))</script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/jquery/cookie/jquery.cookie.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/javascript/ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/javascript/ckeditor/adapters/jquery.js" type="text/javascript"></script>
+    <script src="https://donate.mozilla.org/javascript/wysiwyg_edit.js.php" type="text/javascript"></script>
+    <script type="text/javascript">window.bQuery = jQuery.noConflict(true);</script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/jscalendar/calendar.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/jscalendar/lang/calendar-en.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/jscalendar/calendar-setup.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/javascript/utils/showhide.js" type="text/javascript"></script><script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/utils/locale/javascript/locale.class.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/modules/event2/javascript/locale.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/yui/build/connection/connection-min.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/yui/build/animation/animation-min.js" type="text/javascript"></script><script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/modules/event2/javascript/event.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/modules/event2/javascript/event_shift.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/modules/event2/javascript/event_multiday.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/modules/event2/javascript/venuesuggest.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/ext/jscalendar/calendar-blue.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/modules/event2/css/event_shifts.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.4/modules/event2/css/venuesuggest.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div id="SKIN" class="module_event2">
+
+
+
+<div class="basic container">
+
+    <div id="control_set">
+        <h1>Event Central</h1>
+        <div id="account_actions">
+                            <span id="login_status">You are logged in as rossbruniges@gmail.com<span class="delimiter">|</span></span>
+                <a href="/page/user/logout?successurl=L3BhZ2UvZXZlbnQvY3JlYXRlX2RldGFpbHM=&amp;_h=EtxkLbh6dLDeyDyaEncmJuSgDls">Logout</a><span class="delimiter">|</span>
+            
+            <a href="/page/event/search_simple">Find An Event</a>
+
+                      <span class="delimiter">|</span>
+           <a href="/page/event/create">Plan An Event</a>
+
+           <span class="delimiter">|</span>
+           <a href="/page/event/myevents">Manage Your Events</a>
+           
+                                </div>
+    </div>
+    
+    <div class="main">
+<div id="eventcreate">
+    <script type="text/javascript">
+        var intl_zip_nomenclature = eval({"US":"Zip","AT":"Postal","AU":"Post","BR":"Postal","CA":"Postal","CZ":"Postal","FR":"Postal","DE":"Postal","IT":"Postal","ES":"Postal","GB":"Postal","SE":"Post","ZA":"Post","CN":"Postal","CH":"Postal"});
+        BSD.MultipleDays.remove_confirm_str = "If you would like to start removing this day, click OK. Your changes to this event will be lost.";
+    </script>
+  <h2 class="header">Create Your Own Event -- Step 2 of 2</h2>
+  <p class="instructions">Now, fill in the form below with the details of your event.</p>
+  <div class="table_container">
+  
+<form action="/page/event/create_details" method="post" name="secondform" id="secondform">
+<div>
+<input name="duration" value="60" type="hidden">
+<table border="0">
+<tbody id="bsd-what"><tr>
+                <td colspan="3" class="sectionheader"><h3>What:<span class="bsd-image-replacement"></span></h3></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Event Type:&nbsp;&nbsp;</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <span class="static">Hack Jam</span></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Event Title:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <input size="30" maxlength="128" name="name" type="text"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Event Description:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <textarea style="width: 100%; visibility: hidden; display: none;" id="description" wysiwyg_state="on" rows="14" cols="50" wysiwyg="yes" wysiwyg_showbydefault="yes" wysiwyg_mode="user" wysiwyg_showtoggle="no" name="description"></textarea><span id="cke_description" onmousedown="return false;" class="cke_skin_bsd cke_editor_description" dir="ltr" title=" " role="application" aria-labelledby="cke_description_arialbl" style="width: 769px;" lang="en"><span id="cke_description_arialbl" class="cke_voice_label">Rich Text Editor</span><span class="cke_browser_gecko" role="presentation"><span class="cke_wrapper cke_ltr" role="presentation"><table class="cke_editor" role="presentation" border="0" cellpadding="0" cellspacing="0"><tbody><tr style="-moz-user-select: none;" role="presentation"><td id="cke_top_description" class="cke_top" role="presentation"><div class="cke_toolbox" role="toolbar" aria-labelledby="cke_3"><span id="cke_3" class="cke_voice_label">Toolbar</span><span id="cke_4" class="cke_toolbar" role="presentation"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_5" class="cke_off cke_button_underline" title="Underline" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_5_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(0, event);" onfocus="return CKEDITOR.ui.button._.focus(0, event);" onclick="CKEDITOR.tools.callFunction(3, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_5_label" class="cke_label">Underline</span></a></span><span class="cke_button"><a id="cke_6" class="cke_off cke_button_bold" title="Bold" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_6_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(1, event);" onfocus="return CKEDITOR.ui.button._.focus(1, event);" onclick="CKEDITOR.tools.callFunction(4, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_6_label" class="cke_label">Bold</span></a></span><span class="cke_button"><a id="cke_7" class="cke_off cke_button_italic" title="Italic" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_7_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(2, event);" onfocus="return CKEDITOR.ui.button._.focus(2, event);" onclick="CKEDITOR.tools.callFunction(5, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_7_label" class="cke_label">Italic</span></a></span><span class="cke_button"><a id="cke_8" class="cke_off cke_button_strike" title="Strike Through" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_8_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(3, event);" onfocus="return CKEDITOR.ui.button._.focus(3, event);" onclick="CKEDITOR.tools.callFunction(6, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_8_label" class="cke_label">Strike Through</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_9" class="cke_off cke_button_blockquote" title="Block Quote" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_9_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(4, event);" onfocus="return CKEDITOR.ui.button._.focus(4, event);" onclick="CKEDITOR.tools.callFunction(7, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_9_label" class="cke_label">Block Quote</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a aria-disabled="true" id="cke_10" class="cke_button_undo cke_disabled" title="Undo" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_10_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(5, event);" onfocus="return CKEDITOR.ui.button._.focus(5, event);" onclick="CKEDITOR.tools.callFunction(8, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_10_label" class="cke_label">Undo</span></a></span><span class="cke_button"><a id="cke_11" class="cke_off cke_button_cut" title="Cut" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_11_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(6, event);" onfocus="return CKEDITOR.ui.button._.focus(6, event);" onclick="CKEDITOR.tools.callFunction(9, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_11_label" class="cke_label">Cut</span></a></span><span class="cke_button"><a id="cke_12" class="cke_off cke_button_copy" title="Copy" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_12_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(7, event);" onfocus="return CKEDITOR.ui.button._.focus(7, event);" onclick="CKEDITOR.tools.callFunction(10, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_12_label" class="cke_label">Copy</span></a></span><span class="cke_button"><a id="cke_13" class="cke_off cke_button_paste" title="Paste" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_13_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(8, event);" onfocus="return CKEDITOR.ui.button._.focus(8, event);" onclick="CKEDITOR.tools.callFunction(11, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_13_label" class="cke_label">Paste</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_14" class="cke_off cke_button_specialchar" title="Insert Special Character" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_14_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(9, event);" onfocus="return CKEDITOR.ui.button._.focus(9, event);" onclick="CKEDITOR.tools.callFunction(12, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_14_label" class="cke_label">Insert Special Character</span></a></span></span><span class="cke_separator" role="separator"></span><span class="cke_toolgroup" role="presentation"><span class="cke_button"><a id="cke_15" class="cke_off cke_button_source" title="Source" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label" onkeypress="return false;" onblur="this.style.cssText = this.style.cssText;" onkeydown="return CKEDITOR.ui.button._.keydown(10, event);" onfocus="return CKEDITOR.ui.button._.focus(10, event);" onclick="CKEDITOR.tools.callFunction(13, this); return false;"><span class="cke_icon">&nbsp;</span><span id="cke_15_label" class="cke_label">Source</span></a></span></span><span class="cke_toolbar_end"></span></span></div><a title="Collapse Toolbar" id="cke_16" tabindex="-1" class="cke_toolbox_collapser" onclick="CKEDITOR.tools.callFunction(14)"><span>▲</span></a></td></tr><tr role="presentation"><td id="cke_contents_description" class="cke_contents" style="height: 197px;" role="presentation"><iframe style="width: 100%; height: 100%;" title="Rich text editor, description, press ALT 0 for help." src="" tabindex="0" allowtransparency="true" frameborder="0"></iframe></td></tr><tr style="-moz-user-select: none;" role="presentation"><td id="cke_bottom_description" class="cke_bottom" role="presentation"><span id="cke_path_description_label" class="cke_voice_label">Elements path</span><div id="cke_path_description" class="cke_path" role="group" aria-labelledby="cke_path_description_label"><span class="cke_empty">&nbsp;</span></div><div class="cke_resizer cke_resizer_vertical" title="Drag to resize" onmousedown="CKEDITOR.tools.callFunction(2, event)"></div></td></tr></tbody></table><style>.cke_skin_bsd{visibility:hidden;}</style></span></span><span tabindex="-1" style="position: absolute;" role="presentation"></span></span></td>
+            </tr><tr style="display: none;" class="wysiwyg_allowed_tags"><td></td><td>Allowed tags: <kbd>&lt;b&gt;</kbd> <kbd>&lt;blockquote&gt;</kbd> <kbd>&lt;br&gt;</kbd> <kbd>&lt;em&gt;</kbd> <kbd>&lt;i&gt;</kbd> <kbd>&lt;p&gt;</kbd> <kbd>&lt;strike&gt;</kbd> <kbd>&lt;strong&gt;</kbd> <kbd>&lt;u&gt;</kbd> </td></tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Receive email when users sign up?</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <input name="host_receive_rsvp_emails" value="1" id="qf_05cae2" checked="checked" type="checkbox"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Use default RSVP email message:</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <select onchange="if (this.value==1) {hide('use_default_rsvp_box');} else {show('use_default_rsvp_box');}" name="rsvp_use_default_email_message">
+    <option value="0">No</option>
+    <option value="1" selected="selected">Yes</option>
+</select></td>
+            </tr><tr><td colspan="2"><table id="use_default_rsvp_box" class="hideabletable" style="margin-left: 20px; visibility: hidden; display: none;"><tbody><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Plain text RSVP email message:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <textarea rows="8" cols="50" id="rsvp_email_message" name="rsvp_email_message"></textarea></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label"></label>&nbsp;</td>
+                <td class="field" align="left">
+                    <input onclick="var RsvpMessagePopupWindow = window.open('/page/event/rsvp_email_preview?type=plain&amp;data=' + escape(document.getElementById('rsvp_email_message').value), 'rsvp_email_message_preview_window', 'status=yes,scrollbars=yes,resizable=yes,width=680,height=550,top=10,left=10'); popupWindow.focus();" name="rsvp_plain_text_preview" value="Preview Plain Text Message Format" type="button"></td>
+            </tr><tr><td colspan="2"><em><em>You can use any of the following tags in both the plain text and HTML version of your message:</em> FIRSTNAME, LASTNAME, START_TIME, TITLE, START_DT, START_DAY, DURATION, DESCRIPTION, VENUE_NAME, VENUE_ADDR1, VENUE_ADDR2, VENUE_CITY, VENUE_STATE_CD, VENUE_ZIP, VENUE_DIRECTIONS, EVENT_URL, PLEDGE_AMT, PLEDGE_URL<br><em>Example usage:</em> %%FIRSTNAME%%</em></td></tr></tbody></table></td></tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Send email reminder to attendees?</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <select onchange="if (this.value==1) {show('use_reminder_email');} else {hide('use_reminder_email');}" name="rsvp_use_reminder_email">
+    <option value="0">No</option>
+    <option value="1" selected="selected">Yes</option>
+</select></td>
+            </tr><tr><td colspan="2"><table id="use_reminder_email" class="hideabletable" style="margin-left: 20px;"><tbody><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Enter # of hours before event to send reminder:</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <input size="8" id="rsvp_email_reminder_hours" name="rsvp_email_reminder_hours" value="24" type="text"></td>
+            </tr></tbody></table></td></tr></tbody></table><table border="0" width="100%"><tbody class="bsd-when"><tr>
+                <td colspan="3" class="sectionheader"><h3>When:<span class="bsd-image-replacement"></span></h3></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Event Timezone:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <select name="start_tz">
+    <option value="US/Eastern">US/Eastern, EDT</option>
+    <option value="US/Michigan">US/Michigan, EDT</option>
+    <option value="US/East-Indiana">US/East-Indiana, EDT</option>
+    <option value="US/Central">US/Central, CDT</option>
+    <option value="US/Indiana-Starke">US/Indiana-Starke, CDT</option>
+    <option value="US/Mountain">US/Mountain, MDT</option>
+    <option value="US/Arizona">US/Arizona, MST</option>
+    <option value="US/Pacific">US/Pacific, PDT</option>
+    <option value="US/Alaska">US/Alaska, AKDT</option>
+    <option value="US/Aleutian">US/Aleutian, HADT</option>
+    <option value="US/Hawaii">US/Hawaii, HST</option>
+    <option value=""></option>
+    <option value="Africa/Abidjan">Africa/Abidjan, GMT</option>
+    <option value="Africa/Accra">Africa/Accra, GMT</option>
+    <option value="Africa/Addis_Ababa">Africa/Addis_Ababa, EAT</option>
+    <option value="Africa/Algiers">Africa/Algiers, CET</option>
+    <option value="Africa/Asmara">Africa/Asmara, EAT</option>
+    <option value="Africa/Asmera">Africa/Asmera, EAT</option>
+    <option value="Africa/Bamako">Africa/Bamako, GMT</option>
+    <option value="Africa/Bangui">Africa/Bangui, WAT</option>
+    <option value="Africa/Banjul">Africa/Banjul, GMT</option>
+    <option value="Africa/Bissau">Africa/Bissau, GMT</option>
+    <option value="Africa/Blantyre">Africa/Blantyre, CAT</option>
+    <option value="Africa/Brazzaville">Africa/Brazzaville, WAT</option>
+    <option value="Africa/Bujumbura">Africa/Bujumbura, CAT</option>
+    <option value="Africa/Cairo">Africa/Cairo, EET</option>
+    <option value="Africa/Casablanca">Africa/Casablanca, WET</option>
+    <option value="Africa/Ceuta">Africa/Ceuta, CEST</option>
+    <option value="Africa/Conakry">Africa/Conakry, GMT</option>
+    <option value="Africa/Dakar">Africa/Dakar, GMT</option>
+    <option value="Africa/Dar_es_Salaam">Africa/Dar_es_Salaam, EAT</option>
+    <option value="Africa/Djibouti">Africa/Djibouti, EAT</option>
+    <option value="Africa/Douala">Africa/Douala, WAT</option>
+    <option value="Africa/El_Aaiun">Africa/El_Aaiun, WET</option>
+    <option value="Africa/Freetown">Africa/Freetown, GMT</option>
+    <option value="Africa/Gaborone">Africa/Gaborone, CAT</option>
+    <option value="Africa/Harare">Africa/Harare, CAT</option>
+    <option value="Africa/Johannesburg">Africa/Johannesburg, SAST</option>
+    <option value="Africa/Kampala">Africa/Kampala, EAT</option>
+    <option value="Africa/Khartoum">Africa/Khartoum, EAT</option>
+    <option value="Africa/Kigali">Africa/Kigali, CAT</option>
+    <option value="Africa/Kinshasa">Africa/Kinshasa, WAT</option>
+    <option value="Africa/Lagos">Africa/Lagos, WAT</option>
+    <option value="Africa/Libreville">Africa/Libreville, WAT</option>
+    <option value="Africa/Lome">Africa/Lome, GMT</option>
+    <option value="Africa/Luanda">Africa/Luanda, WAT</option>
+    <option value="Africa/Lubumbashi">Africa/Lubumbashi, CAT</option>
+    <option value="Africa/Lusaka">Africa/Lusaka, CAT</option>
+    <option value="Africa/Malabo">Africa/Malabo, WAT</option>
+    <option value="Africa/Maputo">Africa/Maputo, CAT</option>
+    <option value="Africa/Maseru">Africa/Maseru, SAST</option>
+    <option value="Africa/Mbabane">Africa/Mbabane, SAST</option>
+    <option value="Africa/Mogadishu">Africa/Mogadishu, EAT</option>
+    <option value="Africa/Monrovia">Africa/Monrovia, GMT</option>
+    <option value="Africa/Nairobi">Africa/Nairobi, EAT</option>
+    <option value="Africa/Ndjamena">Africa/Ndjamena, WAT</option>
+    <option value="Africa/Niamey">Africa/Niamey, WAT</option>
+    <option value="Africa/Nouakchott">Africa/Nouakchott, GMT</option>
+    <option value="Africa/Ouagadougou">Africa/Ouagadougou, GMT</option>
+    <option value="Africa/Porto-Novo">Africa/Porto-Novo, WAT</option>
+    <option value="Africa/Sao_Tome">Africa/Sao_Tome, GMT</option>
+    <option value="Africa/Timbuktu">Africa/Timbuktu, GMT</option>
+    <option value="Africa/Tripoli">Africa/Tripoli, EET</option>
+    <option value="Africa/Tunis">Africa/Tunis, CEST</option>
+    <option value="Africa/Windhoek">Africa/Windhoek, WAT</option>
+    <option value="America/Adak">America/Adak, HADT</option>
+    <option value="America/Anchorage">America/Anchorage, AKDT</option>
+    <option value="America/Anguilla">America/Anguilla, AST</option>
+    <option value="America/Antigua">America/Antigua, AST</option>
+    <option value="America/Araguaina">America/Araguaina, BRT</option>
+    <option value="America/Argentina/Buenos_Aires">America/Argentina/Buenos_Aires, ART</option>
+    <option value="America/Argentina/Catamarca">America/Argentina/Catamarca, ART</option>
+    <option value="America/Argentina/ComodRivadavia">America/Argentina/ComodRivadavia, ART</option>
+    <option value="America/Argentina/Cordoba">America/Argentina/Cordoba, ART</option>
+    <option value="America/Argentina/Jujuy">America/Argentina/Jujuy, ART</option>
+    <option value="America/Argentina/La_Rioja">America/Argentina/La_Rioja, ART</option>
+    <option value="America/Argentina/Mendoza">America/Argentina/Mendoza, ART</option>
+    <option value="America/Argentina/Rio_Gallegos">America/Argentina/Rio_Gallegos, ART</option>
+    <option value="America/Argentina/San_Juan">America/Argentina/San_Juan, ART</option>
+    <option value="America/Argentina/San_Luis">America/Argentina/San_Luis, ART</option>
+    <option value="America/Argentina/Tucuman">America/Argentina/Tucuman, ART</option>
+    <option value="America/Argentina/Ushuaia">America/Argentina/Ushuaia, ART</option>
+    <option value="America/Aruba">America/Aruba, AST</option>
+    <option value="America/Asuncion">America/Asuncion, PYT</option>
+    <option value="America/Atikokan">America/Atikokan, EST</option>
+    <option value="America/Atka">America/Atka, HADT</option>
+    <option value="America/Bahia">America/Bahia, BRT</option>
+    <option value="America/Barbados">America/Barbados, AST</option>
+    <option value="America/Belem">America/Belem, BRT</option>
+    <option value="America/Belize">America/Belize, CST</option>
+    <option value="America/Blanc-Sablon">America/Blanc-Sablon, AST</option>
+    <option value="America/Boa_Vista">America/Boa_Vista, AMT</option>
+    <option value="America/Bogota">America/Bogota, COT</option>
+    <option value="America/Boise">America/Boise, MDT</option>
+    <option value="America/Buenos_Aires">America/Buenos_Aires, ART</option>
+    <option value="America/Cambridge_Bay">America/Cambridge_Bay, MDT</option>
+    <option value="America/Campo_Grande">America/Campo_Grande, AMT</option>
+    <option value="America/Cancun">America/Cancun, CDT</option>
+    <option value="America/Caracas">America/Caracas, VET</option>
+    <option value="America/Catamarca">America/Catamarca, ART</option>
+    <option value="America/Cayenne">America/Cayenne, GFT</option>
+    <option value="America/Cayman">America/Cayman, EST</option>
+    <option value="America/Chicago">America/Chicago, CDT</option>
+    <option value="America/Chihuahua">America/Chihuahua, MDT</option>
+    <option value="America/Coral_Harbour">America/Coral_Harbour, EST</option>
+    <option value="America/Cordoba">America/Cordoba, ART</option>
+    <option value="America/Costa_Rica">America/Costa_Rica, CST</option>
+    <option value="America/Cuiaba">America/Cuiaba, AMT</option>
+    <option value="America/Curacao">America/Curacao, AST</option>
+    <option value="America/Danmarkshavn">America/Danmarkshavn, GMT</option>
+    <option value="America/Dawson">America/Dawson, PDT</option>
+    <option value="America/Dawson_Creek">America/Dawson_Creek, MST</option>
+    <option value="America/Denver">America/Denver, MDT</option>
+    <option value="America/Detroit">America/Detroit, EDT</option>
+    <option value="America/Dominica">America/Dominica, AST</option>
+    <option value="America/Edmonton">America/Edmonton, MDT</option>
+    <option value="America/Eirunepe">America/Eirunepe, ACT</option>
+    <option value="America/El_Salvador">America/El_Salvador, CST</option>
+    <option value="America/Ensenada">America/Ensenada, PDT</option>
+    <option value="America/Fort_Wayne">America/Fort_Wayne, EDT</option>
+    <option value="America/Fortaleza">America/Fortaleza, BRT</option>
+    <option value="America/Glace_Bay">America/Glace_Bay, ADT</option>
+    <option value="America/Godthab">America/Godthab, WGST</option>
+    <option value="America/Goose_Bay">America/Goose_Bay, ADT</option>
+    <option value="America/Grand_Turk">America/Grand_Turk, EDT</option>
+    <option value="America/Grenada">America/Grenada, AST</option>
+    <option value="America/Guadeloupe">America/Guadeloupe, AST</option>
+    <option value="America/Guatemala">America/Guatemala, CST</option>
+    <option value="America/Guayaquil">America/Guayaquil, ECT</option>
+    <option value="America/Guyana">America/Guyana, GYT</option>
+    <option value="America/Halifax">America/Halifax, ADT</option>
+    <option value="America/Havana">America/Havana, CDT</option>
+    <option value="America/Hermosillo">America/Hermosillo, MST</option>
+    <option value="America/Indiana/Indianapolis">America/Indiana/Indianapolis, EDT</option>
+    <option value="America/Indiana/Knox">America/Indiana/Knox, CDT</option>
+    <option value="America/Indiana/Marengo">America/Indiana/Marengo, EDT</option>
+    <option value="America/Indiana/Petersburg">America/Indiana/Petersburg, EDT</option>
+    <option value="America/Indiana/Tell_City">America/Indiana/Tell_City, CDT</option>
+    <option value="America/Indiana/Vevay">America/Indiana/Vevay, EDT</option>
+    <option value="America/Indiana/Vincennes">America/Indiana/Vincennes, EDT</option>
+    <option value="America/Indiana/Winamac">America/Indiana/Winamac, EDT</option>
+    <option value="America/Indianapolis">America/Indianapolis, EDT</option>
+    <option value="America/Inuvik">America/Inuvik, MDT</option>
+    <option value="America/Iqaluit">America/Iqaluit, EDT</option>
+    <option value="America/Jamaica">America/Jamaica, EST</option>
+    <option value="America/Jujuy">America/Jujuy, ART</option>
+    <option value="America/Juneau">America/Juneau, AKDT</option>
+    <option value="America/Kentucky/Louisville">America/Kentucky/Louisville, EDT</option>
+    <option value="America/Kentucky/Monticello">America/Kentucky/Monticello, EDT</option>
+    <option value="America/Knox_IN">America/Knox_IN, CDT</option>
+    <option value="America/La_Paz">America/La_Paz, BOT</option>
+    <option value="America/Lima">America/Lima, PET</option>
+    <option value="America/Los_Angeles">America/Los_Angeles, PDT</option>
+    <option value="America/Louisville">America/Louisville, EDT</option>
+    <option value="America/Maceio">America/Maceio, BRT</option>
+    <option value="America/Managua">America/Managua, CST</option>
+    <option value="America/Manaus">America/Manaus, AMT</option>
+    <option value="America/Marigot">America/Marigot, AST</option>
+    <option value="America/Martinique">America/Martinique, AST</option>
+    <option value="America/Mazatlan">America/Mazatlan, MDT</option>
+    <option value="America/Mendoza">America/Mendoza, ART</option>
+    <option value="America/Menominee">America/Menominee, CDT</option>
+    <option value="America/Merida">America/Merida, CDT</option>
+    <option value="America/Mexico_City">America/Mexico_City, CDT</option>
+    <option value="America/Miquelon">America/Miquelon, PMDT</option>
+    <option value="America/Moncton">America/Moncton, ADT</option>
+    <option value="America/Monterrey">America/Monterrey, CDT</option>
+    <option value="America/Montevideo">America/Montevideo, UYT</option>
+    <option value="America/Montreal">America/Montreal, EDT</option>
+    <option value="America/Montserrat">America/Montserrat, AST</option>
+    <option value="America/Nassau">America/Nassau, EDT</option>
+    <option value="America/New_York" selected="selected">America/New_York, EDT</option>
+    <option value="America/Nipigon">America/Nipigon, EDT</option>
+    <option value="America/Nome">America/Nome, AKDT</option>
+    <option value="America/Noronha">America/Noronha, FNT</option>
+    <option value="America/North_Dakota/Center">America/North_Dakota/Center, CDT</option>
+    <option value="America/North_Dakota/New_Salem">America/North_Dakota/New_Salem, CDT</option>
+    <option value="America/Panama">America/Panama, EST</option>
+    <option value="America/Pangnirtung">America/Pangnirtung, EDT</option>
+    <option value="America/Paramaribo">America/Paramaribo, SRT</option>
+    <option value="America/Phoenix">America/Phoenix, MST</option>
+    <option value="America/Port-au-Prince">America/Port-au-Prince, EST</option>
+    <option value="America/Port_of_Spain">America/Port_of_Spain, AST</option>
+    <option value="America/Porto_Acre">America/Porto_Acre, ACT</option>
+    <option value="America/Porto_Velho">America/Porto_Velho, AMT</option>
+    <option value="America/Puerto_Rico">America/Puerto_Rico, AST</option>
+    <option value="America/Rainy_River">America/Rainy_River, CDT</option>
+    <option value="America/Rankin_Inlet">America/Rankin_Inlet, CDT</option>
+    <option value="America/Recife">America/Recife, BRT</option>
+    <option value="America/Regina">America/Regina, CST</option>
+    <option value="America/Resolute">America/Resolute, EST</option>
+    <option value="America/Rio_Branco">America/Rio_Branco, ACT</option>
+    <option value="America/Rosario">America/Rosario, ART</option>
+    <option value="America/Santiago">America/Santiago, CLT</option>
+    <option value="America/Santo_Domingo">America/Santo_Domingo, AST</option>
+    <option value="America/Sao_Paulo">America/Sao_Paulo, BRT</option>
+    <option value="America/Scoresbysund">America/Scoresbysund, EGST</option>
+    <option value="America/Shiprock">America/Shiprock, MDT</option>
+    <option value="America/St_Barthelemy">America/St_Barthelemy, AST</option>
+    <option value="America/St_Johns">America/St_Johns, NDT</option>
+    <option value="America/St_Kitts">America/St_Kitts, AST</option>
+    <option value="America/St_Lucia">America/St_Lucia, AST</option>
+    <option value="America/St_Thomas">America/St_Thomas, AST</option>
+    <option value="America/St_Vincent">America/St_Vincent, AST</option>
+    <option value="America/Swift_Current">America/Swift_Current, CST</option>
+    <option value="America/Tegucigalpa">America/Tegucigalpa, CST</option>
+    <option value="America/Thule">America/Thule, ADT</option>
+    <option value="America/Thunder_Bay">America/Thunder_Bay, EDT</option>
+    <option value="America/Tijuana">America/Tijuana, PDT</option>
+    <option value="America/Toronto">America/Toronto, EDT</option>
+    <option value="America/Tortola">America/Tortola, AST</option>
+    <option value="America/Vancouver">America/Vancouver, PDT</option>
+    <option value="America/Virgin">America/Virgin, AST</option>
+    <option value="America/Whitehorse">America/Whitehorse, PDT</option>
+    <option value="America/Winnipeg">America/Winnipeg, CDT</option>
+    <option value="America/Yakutat">America/Yakutat, AKDT</option>
+    <option value="America/Yellowknife">America/Yellowknife, MDT</option>
+    <option value="Antarctica/Casey">Antarctica/Casey, WST</option>
+    <option value="Antarctica/Davis">Antarctica/Davis, DAVT</option>
+    <option value="Antarctica/DumontDUrville">Antarctica/DumontDUrville, DDUT</option>
+    <option value="Antarctica/Mawson">Antarctica/Mawson, MAWT</option>
+    <option value="Antarctica/McMurdo">Antarctica/McMurdo, NZST</option>
+    <option value="Antarctica/Palmer">Antarctica/Palmer, CLT</option>
+    <option value="Antarctica/Rothera">Antarctica/Rothera, ROTT</option>
+    <option value="Antarctica/South_Pole">Antarctica/South_Pole, NZST</option>
+    <option value="Antarctica/Syowa">Antarctica/Syowa, SYOT</option>
+    <option value="Antarctica/Vostok">Antarctica/Vostok, VOST</option>
+    <option value="Arctic/Longyearbyen">Arctic/Longyearbyen, CEST</option>
+    <option value="Asia/Aden">Asia/Aden, AST</option>
+    <option value="Asia/Almaty">Asia/Almaty, ALMT</option>
+    <option value="Asia/Amman">Asia/Amman, EEST</option>
+    <option value="Asia/Anadyr">Asia/Anadyr, ANAST</option>
+    <option value="Asia/Aqtau">Asia/Aqtau, AQTT</option>
+    <option value="Asia/Aqtobe">Asia/Aqtobe, AQTT</option>
+    <option value="Asia/Ashgabat">Asia/Ashgabat, TMT</option>
+    <option value="Asia/Ashkhabad">Asia/Ashkhabad, TMT</option>
+    <option value="Asia/Baghdad">Asia/Baghdad, AST</option>
+    <option value="Asia/Bahrain">Asia/Bahrain, AST</option>
+    <option value="Asia/Baku">Asia/Baku, AZST</option>
+    <option value="Asia/Bangkok">Asia/Bangkok, ICT</option>
+    <option value="Asia/Beirut">Asia/Beirut, EEST</option>
+    <option value="Asia/Bishkek">Asia/Bishkek, KGT</option>
+    <option value="Asia/Brunei">Asia/Brunei, BNT</option>
+    <option value="Asia/Calcutta">Asia/Calcutta, IST</option>
+    <option value="Asia/Choibalsan">Asia/Choibalsan, CHOT</option>
+    <option value="Asia/Chongqing">Asia/Chongqing, CST</option>
+    <option value="Asia/Chungking">Asia/Chungking, CST</option>
+    <option value="Asia/Colombo">Asia/Colombo, IST</option>
+    <option value="Asia/Dacca">Asia/Dacca, BDT</option>
+    <option value="Asia/Damascus">Asia/Damascus, EEST</option>
+    <option value="Asia/Dhaka">Asia/Dhaka, BDT</option>
+    <option value="Asia/Dili">Asia/Dili, TLT</option>
+    <option value="Asia/Dubai">Asia/Dubai, GST</option>
+    <option value="Asia/Dushanbe">Asia/Dushanbe, TJT</option>
+    <option value="Asia/Gaza">Asia/Gaza, EEST</option>
+    <option value="Asia/Harbin">Asia/Harbin, CST</option>
+    <option value="Asia/Ho_Chi_Minh">Asia/Ho_Chi_Minh, ICT</option>
+    <option value="Asia/Hong_Kong">Asia/Hong_Kong, HKT</option>
+    <option value="Asia/Hovd">Asia/Hovd, HOVT</option>
+    <option value="Asia/Irkutsk">Asia/Irkutsk, IRKST</option>
+    <option value="Asia/Istanbul">Asia/Istanbul, EEST</option>
+    <option value="Asia/Jakarta">Asia/Jakarta, WIT</option>
+    <option value="Asia/Jayapura">Asia/Jayapura, EIT</option>
+    <option value="Asia/Jerusalem">Asia/Jerusalem, IDT</option>
+    <option value="Asia/Kabul">Asia/Kabul, AFT</option>
+    <option value="Asia/Kamchatka">Asia/Kamchatka, PETST</option>
+    <option value="Asia/Karachi">Asia/Karachi, PKT</option>
+    <option value="Asia/Kashgar">Asia/Kashgar, CST</option>
+    <option value="Asia/Katmandu">Asia/Katmandu, NPT</option>
+    <option value="Asia/Kolkata">Asia/Kolkata, IST</option>
+    <option value="Asia/Krasnoyarsk">Asia/Krasnoyarsk, KRAST</option>
+    <option value="Asia/Kuala_Lumpur">Asia/Kuala_Lumpur, MYT</option>
+    <option value="Asia/Kuching">Asia/Kuching, MYT</option>
+    <option value="Asia/Kuwait">Asia/Kuwait, AST</option>
+    <option value="Asia/Macao">Asia/Macao, CST</option>
+    <option value="Asia/Macau">Asia/Macau, CST</option>
+    <option value="Asia/Magadan">Asia/Magadan, MAGST</option>
+    <option value="Asia/Makassar">Asia/Makassar, CIT</option>
+    <option value="Asia/Manila">Asia/Manila, PHT</option>
+    <option value="Asia/Muscat">Asia/Muscat, GST</option>
+    <option value="Asia/Nicosia">Asia/Nicosia, EEST</option>
+    <option value="Asia/Novosibirsk">Asia/Novosibirsk, NOVST</option>
+    <option value="Asia/Omsk">Asia/Omsk, OMSST</option>
+    <option value="Asia/Oral">Asia/Oral, ORAT</option>
+    <option value="Asia/Phnom_Penh">Asia/Phnom_Penh, ICT</option>
+    <option value="Asia/Pontianak">Asia/Pontianak, WIT</option>
+    <option value="Asia/Pyongyang">Asia/Pyongyang, KST</option>
+    <option value="Asia/Qatar">Asia/Qatar, AST</option>
+    <option value="Asia/Qyzylorda">Asia/Qyzylorda, QYZT</option>
+    <option value="Asia/Rangoon">Asia/Rangoon, MMT</option>
+    <option value="Asia/Riyadh">Asia/Riyadh, AST</option>
+    <option value="Asia/Saigon">Asia/Saigon, ICT</option>
+    <option value="Asia/Sakhalin">Asia/Sakhalin, SAKST</option>
+    <option value="Asia/Samarkand">Asia/Samarkand, UZT</option>
+    <option value="Asia/Seoul">Asia/Seoul, KST</option>
+    <option value="Asia/Shanghai">Asia/Shanghai, CST</option>
+    <option value="Asia/Singapore">Asia/Singapore, SGT</option>
+    <option value="Asia/Taipei">Asia/Taipei, CST</option>
+    <option value="Asia/Tashkent">Asia/Tashkent, UZT</option>
+    <option value="Asia/Tbilisi">Asia/Tbilisi, GET</option>
+    <option value="Asia/Tehran">Asia/Tehran, IRDT</option>
+    <option value="Asia/Tel_Aviv">Asia/Tel_Aviv, IDT</option>
+    <option value="Asia/Thimbu">Asia/Thimbu, BTT</option>
+    <option value="Asia/Thimphu">Asia/Thimphu, BTT</option>
+    <option value="Asia/Tokyo">Asia/Tokyo, JST</option>
+    <option value="Asia/Ujung_Pandang">Asia/Ujung_Pandang, CIT</option>
+    <option value="Asia/Ulaanbaatar">Asia/Ulaanbaatar, ULAT</option>
+    <option value="Asia/Ulan_Bator">Asia/Ulan_Bator, ULAT</option>
+    <option value="Asia/Urumqi">Asia/Urumqi, CST</option>
+    <option value="Asia/Vientiane">Asia/Vientiane, ICT</option>
+    <option value="Asia/Vladivostok">Asia/Vladivostok, VLAST</option>
+    <option value="Asia/Yakutsk">Asia/Yakutsk, YAKST</option>
+    <option value="Asia/Yekaterinburg">Asia/Yekaterinburg, YEKST</option>
+    <option value="Asia/Yerevan">Asia/Yerevan, AMST</option>
+    <option value="Atlantic/Azores">Atlantic/Azores, AZOST</option>
+    <option value="Atlantic/Bermuda">Atlantic/Bermuda, ADT</option>
+    <option value="Atlantic/Canary">Atlantic/Canary, WEST</option>
+    <option value="Atlantic/Cape_Verde">Atlantic/Cape_Verde, CVT</option>
+    <option value="Atlantic/Faeroe">Atlantic/Faeroe, WEST</option>
+    <option value="Atlantic/Faroe">Atlantic/Faroe, WEST</option>
+    <option value="Atlantic/Jan_Mayen">Atlantic/Jan_Mayen, CEST</option>
+    <option value="Atlantic/Madeira">Atlantic/Madeira, WEST</option>
+    <option value="Atlantic/Reykjavik">Atlantic/Reykjavik, GMT</option>
+    <option value="Atlantic/South_Georgia">Atlantic/South_Georgia, GST</option>
+    <option value="Atlantic/St_Helena">Atlantic/St_Helena, GMT</option>
+    <option value="Atlantic/Stanley">Atlantic/Stanley, FKT</option>
+    <option value="Australia/ACT">Australia/ACT, EST</option>
+    <option value="Australia/Adelaide">Australia/Adelaide, CST</option>
+    <option value="Australia/Brisbane">Australia/Brisbane, EST</option>
+    <option value="Australia/Broken_Hill">Australia/Broken_Hill, CST</option>
+    <option value="Australia/Canberra">Australia/Canberra, EST</option>
+    <option value="Australia/Currie">Australia/Currie, EST</option>
+    <option value="Australia/Darwin">Australia/Darwin, CST</option>
+    <option value="Australia/Eucla">Australia/Eucla, CWST</option>
+    <option value="Australia/Hobart">Australia/Hobart, EST</option>
+    <option value="Australia/LHI">Australia/LHI, LHST</option>
+    <option value="Australia/Lindeman">Australia/Lindeman, EST</option>
+    <option value="Australia/Lord_Howe">Australia/Lord_Howe, LHST</option>
+    <option value="Australia/Melbourne">Australia/Melbourne, EST</option>
+    <option value="Australia/North">Australia/North, CST</option>
+    <option value="Australia/NSW">Australia/NSW, EST</option>
+    <option value="Australia/Perth">Australia/Perth, WST</option>
+    <option value="Australia/Queensland">Australia/Queensland, EST</option>
+    <option value="Australia/South">Australia/South, CST</option>
+    <option value="Australia/Sydney">Australia/Sydney, EST</option>
+    <option value="Australia/Tasmania">Australia/Tasmania, EST</option>
+    <option value="Australia/Victoria">Australia/Victoria, EST</option>
+    <option value="Australia/West">Australia/West, WST</option>
+    <option value="Australia/Yancowinna">Australia/Yancowinna, CST</option>
+    <option value="Brazil/Acre">Brazil/Acre, ACT</option>
+    <option value="Brazil/DeNoronha">Brazil/DeNoronha, FNT</option>
+    <option value="Brazil/East">Brazil/East, BRT</option>
+    <option value="Brazil/West">Brazil/West, AMT</option>
+    <option value="Canada/Atlantic">Canada/Atlantic, ADT</option>
+    <option value="Canada/Central">Canada/Central, CDT</option>
+    <option value="Canada/East-Saskatchewan">Canada/East-Saskatchewan, CST</option>
+    <option value="Canada/Eastern">Canada/Eastern, EDT</option>
+    <option value="Canada/Mountain">Canada/Mountain, MDT</option>
+    <option value="Canada/Newfoundland">Canada/Newfoundland, NDT</option>
+    <option value="Canada/Pacific">Canada/Pacific, PDT</option>
+    <option value="Canada/Saskatchewan">Canada/Saskatchewan, CST</option>
+    <option value="Canada/Yukon">Canada/Yukon, PDT</option>
+    <option value="CET">CET, CEST</option>
+    <option value="Chile/Continental">Chile/Continental, CLT</option>
+    <option value="Chile/EasterIsland">Chile/EasterIsland, EAST</option>
+    <option value="CST6CDT">CST6CDT, CDT</option>
+    <option value="Cuba">Cuba, CDT</option>
+    <option value="EET">EET, EEST</option>
+    <option value="Egypt">Egypt, EET</option>
+    <option value="Eire">Eire, IST</option>
+    <option value="EST">EST, EDT</option>
+    <option value="EST5EDT">EST5EDT, EDT</option>
+    <option value="Etc/GMT">Etc/GMT, GMT</option>
+    <option value="Etc/GMT+0">Etc/GMT+0, GMT</option>
+    <option value="Etc/GMT+1">Etc/GMT+1, GMT+1</option>
+    <option value="Etc/GMT+10">Etc/GMT+10, GMT+10</option>
+    <option value="Etc/GMT+11">Etc/GMT+11, GMT+11</option>
+    <option value="Etc/GMT+12">Etc/GMT+12, GMT+12</option>
+    <option value="Etc/GMT+2">Etc/GMT+2, GMT+2</option>
+    <option value="Etc/GMT+3">Etc/GMT+3, GMT+3</option>
+    <option value="Etc/GMT+4">Etc/GMT+4, GMT+4</option>
+    <option value="Etc/GMT+5">Etc/GMT+5, GMT+5</option>
+    <option value="Etc/GMT+6">Etc/GMT+6, GMT+6</option>
+    <option value="Etc/GMT+7">Etc/GMT+7, GMT+7</option>
+    <option value="Etc/GMT+8">Etc/GMT+8, GMT+8</option>
+    <option value="Etc/GMT+9">Etc/GMT+9, GMT+9</option>
+    <option value="Etc/GMT-0">Etc/GMT-0, GMT</option>
+    <option value="Etc/GMT-1">Etc/GMT-1, GMT-1</option>
+    <option value="Etc/GMT-10">Etc/GMT-10, GMT-10</option>
+    <option value="Etc/GMT-11">Etc/GMT-11, GMT-11</option>
+    <option value="Etc/GMT-12">Etc/GMT-12, GMT-12</option>
+    <option value="Etc/GMT-13">Etc/GMT-13, GMT-13</option>
+    <option value="Etc/GMT-14">Etc/GMT-14, GMT-14</option>
+    <option value="Etc/GMT-2">Etc/GMT-2, GMT-2</option>
+    <option value="Etc/GMT-3">Etc/GMT-3, GMT-3</option>
+    <option value="Etc/GMT-4">Etc/GMT-4, GMT-4</option>
+    <option value="Etc/GMT-5">Etc/GMT-5, GMT-5</option>
+    <option value="Etc/GMT-6">Etc/GMT-6, GMT-6</option>
+    <option value="Etc/GMT-7">Etc/GMT-7, GMT-7</option>
+    <option value="Etc/GMT-8">Etc/GMT-8, GMT-8</option>
+    <option value="Etc/GMT-9">Etc/GMT-9, GMT-9</option>
+    <option value="Etc/GMT0">Etc/GMT0, GMT</option>
+    <option value="Etc/Greenwich">Etc/Greenwich, GMT</option>
+    <option value="Etc/UCT">Etc/UCT, UCT</option>
+    <option value="Etc/Universal">Etc/Universal, UTC</option>
+    <option value="Etc/UTC">Etc/UTC, UTC</option>
+    <option value="Etc/Zulu">Etc/Zulu, UTC</option>
+    <option value="Europe/Amsterdam">Europe/Amsterdam, CEST</option>
+    <option value="Europe/Andorra">Europe/Andorra, CEST</option>
+    <option value="Europe/Athens">Europe/Athens, EEST</option>
+    <option value="Europe/Belfast">Europe/Belfast, BST</option>
+    <option value="Europe/Belgrade">Europe/Belgrade, CEST</option>
+    <option value="Europe/Berlin">Europe/Berlin, CEST</option>
+    <option value="Europe/Bratislava">Europe/Bratislava, CEST</option>
+    <option value="Europe/Brussels">Europe/Brussels, CEST</option>
+    <option value="Europe/Bucharest">Europe/Bucharest, EEST</option>
+    <option value="Europe/Budapest">Europe/Budapest, CEST</option>
+    <option value="Europe/Chisinau">Europe/Chisinau, EEST</option>
+    <option value="Europe/Copenhagen">Europe/Copenhagen, CEST</option>
+    <option value="Europe/Dublin">Europe/Dublin, IST</option>
+    <option value="Europe/Gibraltar">Europe/Gibraltar, CEST</option>
+    <option value="Europe/Guernsey">Europe/Guernsey, BST</option>
+    <option value="Europe/Helsinki">Europe/Helsinki, EEST</option>
+    <option value="Europe/Isle_of_Man">Europe/Isle_of_Man, BST</option>
+    <option value="Europe/Istanbul">Europe/Istanbul, EEST</option>
+    <option value="Europe/Jersey">Europe/Jersey, BST</option>
+    <option value="Europe/Kaliningrad">Europe/Kaliningrad, EEST</option>
+    <option value="Europe/Kiev">Europe/Kiev, EEST</option>
+    <option value="Europe/Lisbon">Europe/Lisbon, WEST</option>
+    <option value="Europe/Ljubljana">Europe/Ljubljana, CEST</option>
+    <option value="Europe/London">Europe/London, BST</option>
+    <option value="Europe/Luxembourg">Europe/Luxembourg, CEST</option>
+    <option value="Europe/Madrid">Europe/Madrid, CEST</option>
+    <option value="Europe/Malta">Europe/Malta, CEST</option>
+    <option value="Europe/Mariehamn">Europe/Mariehamn, EEST</option>
+    <option value="Europe/Minsk">Europe/Minsk, EEST</option>
+    <option value="Europe/Monaco">Europe/Monaco, CEST</option>
+    <option value="Europe/Moscow">Europe/Moscow, MSD</option>
+    <option value="Europe/Nicosia">Europe/Nicosia, EEST</option>
+    <option value="Europe/Oslo">Europe/Oslo, CEST</option>
+    <option value="Europe/Paris">Europe/Paris, CEST</option>
+    <option value="Europe/Podgorica">Europe/Podgorica, CEST</option>
+    <option value="Europe/Prague">Europe/Prague, CEST</option>
+    <option value="Europe/Riga">Europe/Riga, EEST</option>
+    <option value="Europe/Rome">Europe/Rome, CEST</option>
+    <option value="Europe/Samara">Europe/Samara, SAMST</option>
+    <option value="Europe/San_Marino">Europe/San_Marino, CEST</option>
+    <option value="Europe/Sarajevo">Europe/Sarajevo, CEST</option>
+    <option value="Europe/Simferopol">Europe/Simferopol, EEST</option>
+    <option value="Europe/Skopje">Europe/Skopje, CEST</option>
+    <option value="Europe/Sofia">Europe/Sofia, EEST</option>
+    <option value="Europe/Stockholm">Europe/Stockholm, CEST</option>
+    <option value="Europe/Tallinn">Europe/Tallinn, EEST</option>
+    <option value="Europe/Tirane">Europe/Tirane, CEST</option>
+    <option value="Europe/Tiraspol">Europe/Tiraspol, EEST</option>
+    <option value="Europe/Uzhgorod">Europe/Uzhgorod, EEST</option>
+    <option value="Europe/Vaduz">Europe/Vaduz, CEST</option>
+    <option value="Europe/Vatican">Europe/Vatican, CEST</option>
+    <option value="Europe/Vienna">Europe/Vienna, CEST</option>
+    <option value="Europe/Vilnius">Europe/Vilnius, EEST</option>
+    <option value="Europe/Volgograd">Europe/Volgograd, VOLST</option>
+    <option value="Europe/Warsaw">Europe/Warsaw, CEST</option>
+    <option value="Europe/Zagreb">Europe/Zagreb, CEST</option>
+    <option value="Europe/Zaporozhye">Europe/Zaporozhye, EEST</option>
+    <option value="Europe/Zurich">Europe/Zurich, CEST</option>
+    <option value="Factory">Factory, Local time zone must be set--se</option>
+    <option value="GB">GB, BST</option>
+    <option value="GB-Eire">GB-Eire, BST</option>
+    <option value="GMT">GMT, UTC</option>
+    <option value="GMT+0">GMT+0, GMT</option>
+    <option value="GMT-0">GMT-0, GMT</option>
+    <option value="GMT0">GMT0, GMT</option>
+    <option value="Greenwich">Greenwich, GMT</option>
+    <option value="Hongkong">Hongkong, HKT</option>
+    <option value="HST">HST, HST</option>
+    <option value="Iceland">Iceland, GMT</option>
+    <option value="Indian/Antananarivo">Indian/Antananarivo, EAT</option>
+    <option value="Indian/Chagos">Indian/Chagos, IOT</option>
+    <option value="Indian/Christmas">Indian/Christmas, CXT</option>
+    <option value="Indian/Cocos">Indian/Cocos, CCT</option>
+    <option value="Indian/Comoro">Indian/Comoro, EAT</option>
+    <option value="Indian/Kerguelen">Indian/Kerguelen, TFT</option>
+    <option value="Indian/Mahe">Indian/Mahe, SCT</option>
+    <option value="Indian/Maldives">Indian/Maldives, MVT</option>
+    <option value="Indian/Mauritius">Indian/Mauritius, MUT</option>
+    <option value="Indian/Mayotte">Indian/Mayotte, EAT</option>
+    <option value="Indian/Reunion">Indian/Reunion, RET</option>
+    <option value="Iran">Iran, IRDT</option>
+    <option value="Israel">Israel, IDT</option>
+    <option value="Jamaica">Jamaica, EST</option>
+    <option value="Japan">Japan, JST</option>
+    <option value="Kwajalein">Kwajalein, MHT</option>
+    <option value="Libya">Libya, EET</option>
+    <option value="MET">MET, MEST</option>
+    <option value="Mexico/BajaNorte">Mexico/BajaNorte, PDT</option>
+    <option value="Mexico/BajaSur">Mexico/BajaSur, MDT</option>
+    <option value="Mexico/General">Mexico/General, CDT</option>
+    <option value="MST">MST, MDT</option>
+    <option value="MST7MDT">MST7MDT, MDT</option>
+    <option value="Navajo">Navajo, MDT</option>
+    <option value="NZ">NZ, NZST</option>
+    <option value="NZ-CHAT">NZ-CHAT, CHAST</option>
+    <option value="Pacific/Apia">Pacific/Apia, WST</option>
+    <option value="Pacific/Auckland">Pacific/Auckland, NZST</option>
+    <option value="Pacific/Chatham">Pacific/Chatham, CHAST</option>
+    <option value="Pacific/Easter">Pacific/Easter, EAST</option>
+    <option value="Pacific/Efate">Pacific/Efate, VUT</option>
+    <option value="Pacific/Enderbury">Pacific/Enderbury, PHOT</option>
+    <option value="Pacific/Fakaofo">Pacific/Fakaofo, TKT</option>
+    <option value="Pacific/Fiji">Pacific/Fiji, FJT</option>
+    <option value="Pacific/Funafuti">Pacific/Funafuti, TVT</option>
+    <option value="Pacific/Galapagos">Pacific/Galapagos, GALT</option>
+    <option value="Pacific/Gambier">Pacific/Gambier, GAMT</option>
+    <option value="Pacific/Guadalcanal">Pacific/Guadalcanal, SBT</option>
+    <option value="Pacific/Guam">Pacific/Guam, ChST</option>
+    <option value="Pacific/Honolulu">Pacific/Honolulu, HST</option>
+    <option value="Pacific/Johnston">Pacific/Johnston, HST</option>
+    <option value="Pacific/Kiritimati">Pacific/Kiritimati, LINT</option>
+    <option value="Pacific/Kosrae">Pacific/Kosrae, KOST</option>
+    <option value="Pacific/Kwajalein">Pacific/Kwajalein, MHT</option>
+    <option value="Pacific/Majuro">Pacific/Majuro, MHT</option>
+    <option value="Pacific/Marquesas">Pacific/Marquesas, MART</option>
+    <option value="Pacific/Midway">Pacific/Midway, SST</option>
+    <option value="Pacific/Nauru">Pacific/Nauru, NRT</option>
+    <option value="Pacific/Niue">Pacific/Niue, NUT</option>
+    <option value="Pacific/Norfolk">Pacific/Norfolk, NFT</option>
+    <option value="Pacific/Noumea">Pacific/Noumea, NCT</option>
+    <option value="Pacific/Pago_Pago">Pacific/Pago_Pago, SST</option>
+    <option value="Pacific/Palau">Pacific/Palau, PWT</option>
+    <option value="Pacific/Pitcairn">Pacific/Pitcairn, PST</option>
+    <option value="Pacific/Ponape">Pacific/Ponape, PONT</option>
+    <option value="Pacific/Port_Moresby">Pacific/Port_Moresby, PGT</option>
+    <option value="Pacific/Rarotonga">Pacific/Rarotonga, CKT</option>
+    <option value="Pacific/Saipan">Pacific/Saipan, ChST</option>
+    <option value="Pacific/Samoa">Pacific/Samoa, SST</option>
+    <option value="Pacific/Tahiti">Pacific/Tahiti, TAHT</option>
+    <option value="Pacific/Tarawa">Pacific/Tarawa, GILT</option>
+    <option value="Pacific/Tongatapu">Pacific/Tongatapu, TOT</option>
+    <option value="Pacific/Truk">Pacific/Truk, TRUT</option>
+    <option value="Pacific/Wake">Pacific/Wake, WAKT</option>
+    <option value="Pacific/Wallis">Pacific/Wallis, WFT</option>
+    <option value="Pacific/Yap">Pacific/Yap, TRUT</option>
+    <option value="Poland">Poland, CEST</option>
+    <option value="Portugal">Portugal, WEST</option>
+    <option value="PRC">PRC, CST</option>
+    <option value="PST8PDT">PST8PDT, PDT</option>
+    <option value="ROC">ROC, CST</option>
+    <option value="ROK">ROK, KST</option>
+    <option value="Singapore">Singapore, SGT</option>
+    <option value="Turkey">Turkey, EEST</option>
+    <option value="UCT">UCT, UCT</option>
+    <option value="Universal">Universal, UTC</option>
+    <option value="US/Pacific-New">US/Pacific-New, PDT</option>
+    <option value="US/Samoa">US/Samoa, SST</option>
+    <option value="UTC">UTC, UTC</option>
+    <option value="W-SU">W-SU, MSD</option>
+    <option value="WET">WET, CEST</option>
+    <option value="Zulu">Zulu, UTC</option>
+</select></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Date:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <select onchange="update_cal_from_form (start_day_cal, 'start_day');" name="start_day[Y]">
+    <option value="2012" selected="selected">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+</select><select onchange="update_cal_from_form (start_day_cal, 'start_day');" name="start_day[M]">
+    <option value="1">Jan</option>
+    <option value="2">Feb</option>
+    <option value="3">Mar</option>
+    <option value="4">Apr</option>
+    <option value="5" selected="selected">May</option>
+    <option value="6">Jun</option>
+    <option value="7">Jul</option>
+    <option value="8">Aug</option>
+    <option value="9">Sep</option>
+    <option value="10">Oct</option>
+    <option value="11">Nov</option>
+    <option value="12">Dec</option>
+</select><select onchange="update_cal_from_form (start_day_cal, 'start_day');" name="start_day[d]">
+    <option value="1">01</option>
+    <option value="2" selected="selected">02</option>
+    <option value="3">03</option>
+    <option value="4">04</option>
+    <option value="5">05</option>
+    <option value="6">06</option>
+    <option value="7">07</option>
+    <option value="8">08</option>
+    <option value="9">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+</select>&nbsp;<input id="start_day_cal" onclick="if (start_day_cal) start_day_cal.showAtElement(this); return false;" name="start_day_cal" src="https://donate.mozilla.org/ext/jscalendar/calendar-icon.gif" border="0" type="image"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Time:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <select name="start_time[h]">
+    <option value="1">01</option>
+    <option value="2">02</option>
+    <option value="3">03</option>
+    <option value="4">04</option>
+    <option value="5">05</option>
+    <option value="6">06</option>
+    <option value="7">07</option>
+    <option value="8">08</option>
+    <option value="9">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12" selected="selected">12</option>
+</select>:<select name="start_time[i]">
+    <option value="0" selected="selected">00</option>
+    <option value="1">01</option>
+    <option value="2">02</option>
+    <option value="3">03</option>
+    <option value="4">04</option>
+    <option value="5">05</option>
+    <option value="6">06</option>
+    <option value="7">07</option>
+    <option value="8">08</option>
+    <option value="9">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+    <option value="30">30</option>
+    <option value="31">31</option>
+    <option value="32">32</option>
+    <option value="33">33</option>
+    <option value="34">34</option>
+    <option value="35">35</option>
+    <option value="36">36</option>
+    <option value="37">37</option>
+    <option value="38">38</option>
+    <option value="39">39</option>
+    <option value="40">40</option>
+    <option value="41">41</option>
+    <option value="42">42</option>
+    <option value="43">43</option>
+    <option value="44">44</option>
+    <option value="45">45</option>
+    <option value="46">46</option>
+    <option value="47">47</option>
+    <option value="48">48</option>
+    <option value="49">49</option>
+    <option value="50">50</option>
+    <option value="51">51</option>
+    <option value="52">52</option>
+    <option value="53">53</option>
+    <option value="54">54</option>
+    <option value="55">55</option>
+    <option value="56">56</option>
+    <option value="57">57</option>
+    <option value="58">58</option>
+    <option value="59">59</option>
+</select>&nbsp;<select name="start_time[a]">
+    <option value="am">am</option>
+    <option value="pm" selected="selected">pm</option>
+</select></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Event Length:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <input size="4" onclick="document.secondform.duration_allday.checked = false;" onchange="var re_number = /^\d+$/; if (this.value) { if(this.value < 1) {alert ('You must enter a value greater than 0'); this.select(); this.focus(); return;} else if (!re_number.test(this.value)) { alert ('You must enter a valid number'); this.select(); this.focus(); return;} document.secondform.duration.value=this.value * document.secondform.duration_unit.value;}" name="duration_num" value="1" type="text">&nbsp;<select onclick="document.secondform.duration_allday.checked = false;" onchange="if (document.secondform.duration_num.value) {document.secondform.duration.value=this.value * document.secondform.duration_num.value;}" name="duration_unit">
+    <option value="1">minutes</option>
+    <option value="60" selected="selected">hours</option>
+    <option value="1440">days</option>
+</select>&nbsp; or &nbsp;<input onclick="document.secondform.duration_num.value=''; document.secondform.duration.value=-1;" name="duration_allday" value="-1" id="qf_9e13d4" type="radio"><label for="qf_9e13d4">all day event</label></td>
+            </tr></tbody></table><table id="add_another_date_container" style="display: none;" border="0" width="100%"><tbody class="bsd-when"><tr><td><a href="javascript:void(0)" id="add_another_date">Add Another Date</a></td></tr></tbody></table><table id="venue_information" border="0"><tbody id="bsd-where"><tr>
+                <td colspan="3" class="sectionheader"><h3>Where:<span class="bsd-image-replacement"></span></h3></td>
+            </tr><tr><td></td><td></td><td rowspan="10">
+<div id="venuesuggest" style="display: none;">
+    <strong><em>Are you looking for...</em></strong>
+    <div id="venuesuggest_results" aria-live="polite"></div>
+    <div id="venuesuggest_template" class="venuesuggest" style="display: none;">
+        <div class="venue_name"></div>
+        <div class="venue_address1"></div>
+        <div class="venue_address2"></div>
+        <div class="venue_use_this_link">Use this address</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var venuesuggest_config = {
+    "form": "secondform",
+    "name": "venue_name",
+    "country": "venue_country",
+    "address1": "venue_addr1",
+    "address2": "venue_addr2",
+    "city": "venue_city",
+    "state": "venue_state_cd",
+    "zip": "venue_zip",
+    "container": "venuesuggest",
+    "results_container": "venuesuggest_results",
+    "results_template": "venuesuggest_template"
+};
+
+YAHOO.util.Event.onDOMReady(BSD.Event.VenueSuggest.init, venuesuggest_config);
+</script>
+</td></tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Country:</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <select onchange="BSD.event.internationalization(this)" id="venue_country" name="venue_country">
+    <option value=""></option>
+    <option value="AF">Afghanistan</option>
+    <option value="AL">Albania</option>
+    <option value="DZ">Algeria</option>
+    <option value="AS">American Samoa</option>
+    <option value="AD">Andorra</option>
+    <option value="AO">Angola</option>
+    <option value="AI">Anguilla</option>
+    <option value="AG">Antigua and Barbuda</option>
+    <option value="AR">Argentina</option>
+    <option value="AM">Armenia</option>
+    <option value="AW">Aruba</option>
+    <option value="AU">Australia</option>
+    <option value="AT">Austria</option>
+    <option value="AZ">Azerbaijan</option>
+    <option value="BS">Bahamas</option>
+    <option value="BH">Bahrain</option>
+    <option value="BD">Bangladesh</option>
+    <option value="BB">Barbados</option>
+    <option value="BY">Belarus</option>
+    <option value="BE">Belgium</option>
+    <option value="BZ">Belize</option>
+    <option value="BJ">Benin</option>
+    <option value="BM">Bermuda</option>
+    <option value="BT">Bhutan</option>
+    <option value="BO">Bolivia</option>
+    <option value="BA">Bosnia and Herzegovina</option>
+    <option value="BW">Botswana</option>
+    <option value="BR">Brazil</option>
+    <option value="VG">British Virgin Islands</option>
+    <option value="IO">British Indian Ocean Territory</option>
+    <option value="BN">Brunei</option>
+    <option value="BG">Bulgaria</option>
+    <option value="BF">Burkina Faso</option>
+    <option value="BI">Burundi</option>
+    <option value="KH">Cambodia</option>
+    <option value="CM">Cameroon</option>
+    <option value="CA">Canada</option>
+    <option value="CV">Cape Verde</option>
+    <option value="KY">Cayman Islands</option>
+    <option value="CF">Central African Republic</option>
+    <option value="TD">Chad</option>
+    <option value="CL">Chile</option>
+    <option value="CN">China</option>
+    <option value="CX">Christmas Island</option>
+    <option value="CO">Colombia</option>
+    <option value="KM">Comoros Islands</option>
+    <option value="CD">Congo, Democratic Republic of the</option>
+    <option value="CG">Congo, Republic of the</option>
+    <option value="CK">Cook Islands</option>
+    <option value="CR">Costa Rica</option>
+    <option value="CI">Cote D'ivoire</option>
+    <option value="HR">Croatia</option>
+    <option value="CU">Cuba</option>
+    <option value="CY">Cyprus</option>
+    <option value="CZ">Czech Republic</option>
+    <option value="DK">Denmark</option>
+    <option value="DJ">Djibouti</option>
+    <option value="DM">Dominica</option>
+    <option value="DO">Dominican Republic</option>
+    <option value="TP">East Timor</option>
+    <option value="EC">Ecuador</option>
+    <option value="EG">Egypt</option>
+    <option value="SV">El Salvador</option>
+    <option value="GQ">Equatorial Guinea</option>
+    <option value="ER">Eritrea</option>
+    <option value="EE">Estonia</option>
+    <option value="ET">Ethiopia</option>
+    <option value="FK">Falkland Islands (Malvinas)</option>
+    <option value="FO">Faroe Islands</option>
+    <option value="FJ">Fiji</option>
+    <option value="FI">Finland</option>
+    <option value="FR">France</option>
+    <option value="GF">French Guiana</option>
+    <option value="PF">French Polynesia</option>
+    <option value="TF">French Southern Territories</option>
+    <option value="GA">Gabon</option>
+    <option value="GM">Gambia</option>
+    <option value="GE">Georgia</option>
+    <option value="DE">Germany</option>
+    <option value="GH">Ghana</option>
+    <option value="GI">Gibraltar</option>
+    <option value="GR">Greece</option>
+    <option value="GL">Greenland</option>
+    <option value="GD">Grenada</option>
+    <option value="GP">Guadeloupe</option>
+    <option value="GU">Guam</option>
+    <option value="GT">Guatemala</option>
+    <option value="GN">Guinea</option>
+    <option value="GW">Guinea-Bissau</option>
+    <option value="GY">Guyana</option>
+    <option value="HT">Haiti</option>
+    <option value="VA">Holy See (Vatican City State)</option>
+    <option value="HN">Honduras</option>
+    <option value="HK">Hong Kong</option>
+    <option value="HU">Hungary</option>
+    <option value="IS">Iceland</option>
+    <option value="IN">India</option>
+    <option value="ID">Indonesia</option>
+    <option value="IR">Iran</option>
+    <option value="IQ">Iraq</option>
+    <option value="IE">Ireland</option>
+    <option value="IL">Israel</option>
+    <option value="IT">Italy</option>
+    <option value="JM">Jamaica</option>
+    <option value="JP">Japan</option>
+    <option value="JO">Jordan</option>
+    <option value="KZ">Kazakhstan</option>
+    <option value="KE">Kenya</option>
+    <option value="KI">Kiribati</option>
+    <option value="KR">South Korea</option>
+    <option value="XK">Kosovo</option>
+    <option value="KW">Kuwait</option>
+    <option value="KG">Kyrgyzstan</option>
+    <option value="LA">Laos</option>
+    <option value="LV">Latvia</option>
+    <option value="LB">Lebanon</option>
+    <option value="LS">Lesotho</option>
+    <option value="LR">Liberia</option>
+    <option value="LI">Liechtenstein</option>
+    <option value="LT">Lithuania</option>
+    <option value="LU">Luxembourg</option>
+    <option value="MO">Macau</option>
+    <option value="MK">Macedonia</option>
+    <option value="MG">Madagascar</option>
+    <option value="MW">Malawi</option>
+    <option value="MY">Malaysia</option>
+    <option value="MV">Maldives</option>
+    <option value="ML">Mali</option>
+    <option value="MT">Malta</option>
+    <option value="MH">Marshall Islands</option>
+    <option value="MQ">Martinique</option>
+    <option value="MR">Mauritania</option>
+    <option value="MU">Mauritius</option>
+    <option value="YT">Mayotte</option>
+    <option value="MX">Mexico</option>
+    <option value="FM">Micronesia</option>
+    <option value="MD">Moldova, Republic of</option>
+    <option value="MC">Monaco</option>
+    <option value="MN">Mongolia</option>
+    <option value="ME">Montenegro</option>
+    <option value="MS">Montserrat</option>
+    <option value="MA">Morocco</option>
+    <option value="MZ">Mozambique</option>
+    <option value="MM">Myanmar</option>
+    <option value="NA">Namibia</option>
+    <option value="NR">Nauru</option>
+    <option value="NP">Nepal</option>
+    <option value="NL">Netherlands</option>
+    <option value="AN">Netherlands Antilles</option>
+    <option value="NC">New Caledonia</option>
+    <option value="NZ">New Zealand</option>
+    <option value="NI">Nicaragua</option>
+    <option value="NE">Niger</option>
+    <option value="NG">Nigeria</option>
+    <option value="NU">Niue</option>
+    <option value="NF">Norfolk Island</option>
+    <option value="MP">Northern Mariana Islands</option>
+    <option value="NO">Norway</option>
+    <option value="OM">Oman</option>
+    <option value="PK">Pakistan</option>
+    <option value="PW">Palau</option>
+    <option value="PA">Panama</option>
+    <option value="PG">Papua New Guinea</option>
+    <option value="PY">Paraguay</option>
+    <option value="PE">Peru</option>
+    <option value="PH">Philippines</option>
+    <option value="PN">Pitcairn Island</option>
+    <option value="PL">Poland</option>
+    <option value="PT">Portugal</option>
+    <option value="PR">Puerto Rico</option>
+    <option value="QA">Qatar</option>
+    <option value="RE">Reunion</option>
+    <option value="RO">Romania</option>
+    <option value="RU">Russian Federation</option>
+    <option value="RW">Rwanda</option>
+    <option value="KN">Saint Kitts and Nevis</option>
+    <option value="LC">Saint Lucia</option>
+    <option value="VC">Saint Vincent and the Grenadines</option>
+    <option value="WS">Samoa</option>
+    <option value="SM">San Marino</option>
+    <option value="ST">Sao Tome and Principe</option>
+    <option value="SA">Saudi Arabia</option>
+    <option value="SN">Senegal</option>
+    <option value="RS">Serbia</option>
+    <option value="SC">Seychelles</option>
+    <option value="SL">Sierra Leone</option>
+    <option value="SG">Singapore</option>
+    <option value="SK">Slovakia</option>
+    <option value="SI">Slovenia</option>
+    <option value="SB">Solomon Islands</option>
+    <option value="SO">Somalia</option>
+    <option value="ZA">South Africa</option>
+    <option value="ES">Spain</option>
+    <option value="LK">Sri Lanka</option>
+    <option value="SH">St. Helena</option>
+    <option value="PM">St. Pierre and Miquelon</option>
+    <option value="SD">Sudan</option>
+    <option value="SR">Suriname</option>
+    <option value="SZ">Swaziland</option>
+    <option value="SE">Sweden</option>
+    <option value="CH">Switzerland</option>
+    <option value="SY">Syria</option>
+    <option value="TW">Taiwan</option>
+    <option value="TJ">Tajikistan</option>
+    <option value="TZ">Tanzania</option>
+    <option value="TH">Thailand</option>
+    <option value="TG">Togo</option>
+    <option value="TK">Tokelau</option>
+    <option value="TO">Tonga</option>
+    <option value="TT">Trinidad and Tobago</option>
+    <option value="TN">Tunisia</option>
+    <option value="TR">Turkey</option>
+    <option value="TM">Turkmenistan</option>
+    <option value="TC">Turks and Caicos Islands</option>
+    <option value="TV">Tuvalu</option>
+    <option value="UG">Uganda</option>
+    <option value="UA">Ukraine</option>
+    <option value="AE">United Arab Emirates</option>
+    <option value="GB">United Kingdom</option>
+    <option value="US" selected="selected">United States</option>
+    <option value="UY">Uruguay</option>
+    <option value="UZ">Uzbekistan</option>
+    <option value="VU">Vanuatu</option>
+    <option value="VE">Venezuela</option>
+    <option value="VN">Viet Nam</option>
+    <option value="VI">Virgin Islands (U.S.)</option>
+    <option value="WF">Wallis and Futuna Islands</option>
+    <option value="EH">Western Sahara</option>
+    <option value="YE">Yemen</option>
+    <option value="ZM">Zambia</option>
+    <option value="ZW">Zimbabwe</option>
+</select></td>
+            </tr><tr><td colspan="2">&nbsp;</td></tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Location Name:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <input size="30" name="venue_name" type="text"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Capacity Limit: (includes guests; zero for no limit)</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <input size="4" name="capacity" value="0" type="text"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Address:</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <input size="30" name="venue_addr1" type="text"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label"></label>&nbsp;</td>
+                <td class="field" align="left">
+                    <input size="30" name="venue_addr2" type="text"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">City:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <input size="30" name="venue_city" value="Beverly Hills" type="text"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">State/Region/Province:</label>&nbsp;<span style="color: red;">*</span> 
+                </td>
+                <td class="field" align="left">
+                    <select size="1" id="venue_state_cd" name="venue_state_cd">
+    <option value=""></option>
+    <option value="AK">AK</option>
+    <option value="AL">AL</option>
+    <option value="AR">AR</option>
+    <option value="AZ">AZ</option>
+    <option value="CA" selected="selected">CA</option>
+    <option value="CO">CO</option>
+    <option value="CT">CT</option>
+    <option value="DC">DC</option>
+    <option value="DE">DE</option>
+    <option value="FL">FL</option>
+    <option value="GA">GA</option>
+    <option value="HI">HI</option>
+    <option value="IA">IA</option>
+    <option value="ID">ID</option>
+    <option value="IL">IL</option>
+    <option value="IN">IN</option>
+    <option value="KS">KS</option>
+    <option value="KY">KY</option>
+    <option value="LA">LA</option>
+    <option value="MA">MA</option>
+    <option value="MD">MD</option>
+    <option value="ME">ME</option>
+    <option value="MI">MI</option>
+    <option value="MN">MN</option>
+    <option value="MO">MO</option>
+    <option value="MS">MS</option>
+    <option value="MT">MT</option>
+    <option value="NC">NC</option>
+    <option value="ND">ND</option>
+    <option value="NE">NE</option>
+    <option value="NH">NH</option>
+    <option value="NJ">NJ</option>
+    <option value="NM">NM</option>
+    <option value="NV">NV</option>
+    <option value="NY">NY</option>
+    <option value="OH">OH</option>
+    <option value="OK">OK</option>
+    <option value="OR">OR</option>
+    <option value="PA">PA</option>
+    <option value="RI">RI</option>
+    <option value="SC">SC</option>
+    <option value="SD">SD</option>
+    <option value="TN">TN</option>
+    <option value="TX">TX</option>
+    <option value="UT">UT</option>
+    <option value="VA">VA</option>
+    <option value="VT">VT</option>
+    <option value="WA">WA</option>
+    <option value="WI">WI</option>
+    <option value="WV">WV</option>
+    <option value="WY">WY</option>
+    <option value="--">---</option>
+    <option value="AA">AA</option>
+    <option value="AE">AE</option>
+    <option value="AP">AP</option>
+    <option value="AS">AS</option>
+    <option value="FM">FM</option>
+    <option value="GU">GU</option>
+    <option value="MH">MH</option>
+    <option value="MP">MP</option>
+    <option value="PR">PR</option>
+    <option value="PW">PW</option>
+    <option value="VI">VI</option>
+</select></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Postal/Zip Code:</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <input size="6" maxlength="12" id="event_zip_row" name="venue_zip" value="90210" type="text"></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Directions To Event:</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <textarea rows="4" cols="30" name="venue_directions"></textarea></td>
+            </tr></tbody><tbody><tr>
+                <td colspan="3" class="sectionheader"><h3>Who:<span class="bsd-image-replacement"></span></h3></td>
+            </tr><tr>
+                <td class="label" align="left" valign="top">
+                    <label class="form_label">Show In Public Search:</label>&nbsp;</td>
+                <td class="field" align="left">
+                    <select name="is_searchable">
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+</select></td>
+            </tr><tr><td colspan="2" align="center"><input class="ui-state-default" name="submit_button" value="Create Event" type="submit"></td></tr><tr><td colspan="3" class="required" align="right" valign="top"><span class="error">*</span> denotes required field</td>
+</tr></tbody></table>
+</div>
+</form>
+  </div>
+</div>
+
+    </div><!-- div.main -->
+
+</div><!-- div.basic -->
+
+</div><!-- div#SKIN -->
+{% endblock %}
+
+{% block footer %}
+    {% include "footer.html" %}
+    {{ js('bsd_hacks') }}
+{% endblock %}

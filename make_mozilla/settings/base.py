@@ -11,6 +11,11 @@ MINIFY_BUNDLES = {
             'css/ext/normalize.css',
             'css/base.less',
         ),
+        'bsd_hacks': (
+            'css/ext/normalize.css',
+            'css/base.less',
+            'css/bsd.css',
+        ),
         'make_desktop': (
             'css/desktop.less',
         ),
@@ -21,6 +26,10 @@ MINIFY_BUNDLES = {
             'js/examples/libs/jquery.cookie.js',
             'js/examples/init.js',
         ),
+        'bsd_hacks': (
+            'js/ext/jquery.1.7.2.min.js',
+            'js/page-munger.js',
+        )
     }
 }
 

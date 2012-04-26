@@ -1,0 +1,105 @@
+{% extends "events/base.html" %}
+
+{% block site_css %}
+    {{ css('bsd_hacks') }}
+   	<link rel="stylesheet" type="text/css" href="https://donate.mozilla.org/skins/default/skin.css"/>
+   	<link rel="stylesheet" type="text/css" href="https://donate.mozilla.org/skins/default/constituent/frontend.css"/>
+{% endblock %}
+
+{% block content %}
+<div id="SKIN" class="module_constituent">
+</div><!-- #SKIN.module_constituent -->
+
+
+<div id="constituent_content">
+    <div id="cons_headertitle"></div>
+    <div id="constituent">
+        <div id="loginform">
+    <form method="POST" action="/ctl/Constituent/Login?successurl=L3BhZ2UvZXZlbnQvY3JlYXRlX2RldGFpbHM=&amp;_h=EtxkLbh6dLDeyDyaEncmJuSgDls">
+        <div class="logintitle"><strong>Login:</strong> If you already have an account...</div>
+        <table>
+        <tr>
+            <td colspan="2" class="logindesc">If you already have an account, log in below.  Otherwise, use the form at the bottom of this page to create a new account.</td>
+                    </tr>
+        
+                <tr>
+            <th>Email:</th>
+            <td><input id="username" maxlength="150" name="username" size="25" type="text" /></td>
+        </tr>
+        <!--{if $form_login.errors.username}<tr><td>&nbsp;</td><td class="qferror">{$form_login.errors.username}</td></tr>{/if} -->
+        
+        <tr>
+            <th>Password:</th>
+            <td><input id="password" maxlength="100" name="password" size="10" type="password" />&nbsp;&nbsp;<input id="remember_me" name="remember_me" type="checkbox" value="1" /><label for="remember_me">Remember Me</label></td>
+        </tr>
+        <!--{if $form_login.errors.password}<tr><td>&nbsp;</td><td class="qferror">{$form_login.errors.password}</td></tr>{/if} -->
+        <tr>
+            <td></td>
+            <td><a class="loginforgotlink" href="/page/user/forgot" target="_new">Forgot Your Password?</a></td>
+        </tr>
+        <tr>
+        <td colspan="2" class="loginbutton"><input name="login_submit" type="submit" value="Login" /></td>
+        </tr>
+        </table>
+    </form>
+</div>
+
+<br/>
+<div id="signupform">
+    <div class="signuptitle"><strong>Signup:</strong> To create a new account...</div>
+    <form method="POST" action="/ctl/Constituent/Login?successurl=L3BhZ2UvZXZlbnQvY3JlYXRlX2RldGFpbHM=&amp;_h=EtxkLbh6dLDeyDyaEncmJuSgDls">
+        <table>
+        <tr>
+            <td colspan="2" class="signupdesc">To create an account, just fill out the form below.</td>
+        </tr>
+
+        
+        
+        <tr>
+            <th>Your First Name:</th>
+            <td><input id="firstname" maxlength="100" name="firstname" size="15" type="text" /></td>
+        </tr>
+        <!--{if $form_signup.errors.firstname}<tr><td>&nbsp;</td><td class="qferror">{$form_signup.errors.firstname}</td></tr>{/if} -->
+
+        <tr>
+            <th>Your Last Name:</th>
+            <td><input id="lastname" maxlength="100" name="lastname" size="15" type="text" /></td>
+        </tr>
+        <!--{if $form_signup.errors.lastname}<tr><td>&nbsp;</td><td class="qferror">{$form_signup.errors.lastname}</td></tr>{/if} -->
+
+        <tr>
+            <th>Zip/Postal Code:</th>
+            <td><input id="zip" name="zip" size="6" type="text" /></td>
+        </tr>
+        <!--{if $form_signup.errors.zip}<tr><td>&nbsp;</td><td class="qferror">{$form_signup.errors.zip}</td></tr>{/if} -->
+
+        <tr>
+            <th>Email Address:</th>
+            <td><input id="email" maxlength="100" name="email" size="25" type="text" /></td>
+        </tr>
+        <!--{if $form_signup.errors.email}<tr><td>&nbsp;</td><td class="qferror">{$form_signup.errors.email}</td></tr>{/if} -->
+
+        
+        <tr>
+            <th>Password:</th>
+            <td><input id="password1" maxlength="100" name="password1" size="10" type="password" /></td>
+        </tr>
+        <!--{if $form_signup.errors.password1}<tr><td>&nbsp;</td><td class="qferror">{$form_signup.errors.password1}</td></tr>{/if} -->
+
+        <tr>
+            <th>Password (again):</th>
+            <td><input id="password2" maxlength="100" name="password2" size="10" type="password" /></td>
+        </tr>
+        <!--{if $form_signup.errors.password2}<tr><td>&nbsp;</td><td class="qferror">{$form_signup.errors.password2}</td></tr>{/if} -->
+
+        
+        <tr>
+            <td colspan="2" class="signupbutton"><input name="signup_submit" type="submit" value="Signup" /></td>
+        </tr>
+        </table>
+    </form>
+
+    </div> <!-- DIV#signupform -->
+    </div> <!-- DIV#constituent -->
+</div> <!-- DIV#constituent_content -->
+{% endblock %}

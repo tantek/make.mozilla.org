@@ -1,0 +1,320 @@
+#control_set,
+.instructions,
+#event_detail_xml_link,
+#event_detail_xml_link + h2,
+.maplinks {
+    display: none;
+}
+#content .constrained {
+  overflow: hidden;
+  zoom: 1;
+}
+#SKIN {
+  width: 65%;
+  float: left;
+}
+#constituent {
+  overflow: hidden;
+  zoom: 1;
+  border: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#content #SKIN .main {
+  border:none;
+  padding: 0;
+  margin-top: 0;
+}
+#content div.table_container,
+#content #eventdetail {
+    border: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 1em 20px;
+    float: left;
+}
+.manage #content #eventdetail {
+  background: none;
+  padding: 0;
+}
+#extra {
+  float: right;
+  background: #fff;
+  width: 33%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1em 20px;
+}
+#extra table {
+  text-align: left;
+}
+#content .detailtable_container,
+#content .form_button_group,
+#content .day_attendee_count {
+  -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 1em 20px;
+    overflow: hidden;
+    zoom: 1;
+    margin: 0;
+}
+.detail #eventdetail .detailtable_container {
+  padding: 0;
+  margin-top: -1.5em;
+}
+#content .ui-widget .detailtable_container {
+  padding: 0;
+}
+#content .detailtable_container table {
+  float: left;
+}
+#SKIN p, #SKIN li, #SKIN td, #SKIN th, #SKIN label, #SKIN div, #SKIN a {
+    font-size: 14px !important;
+    vertical-align: top;
+}
+#SKIN table {
+    text-align: left;
+}
+#content #loginform table,
+#content #signupform table {
+  float: left;
+  width: 100%;
+  background: #fff;
+  border: none;
+}
+#content #loginform tbody,
+#content #signupform tbody {
+  display: block;
+  padding: 1em 20px;
+}
+#event_zip_row th,
+#event_zip_row td {
+    border-bottom: 1px solid #E1E2E3;
+    padding-bottom: 1em;
+}
+table.firstform tr:last-child td {
+    border-top: 1px solid #e1e2e3;
+    padding-top: 1em;
+}
+#content #SKIN .odd {
+    background: none;
+}
+#content #SKIN .basic .main h2.header,
+#content #loginform .logintitle,
+#content #signupform .signuptitle,
+#content #SKIN #eventcreate h3,
+#SKIN form#invite_form h3,
+#content #SKIN .basic .main #eventdetail h2#sectionheader,
+#SKIN .basic .main #eventdetail h2.dayheader,
+#content #myevents h2#sectionheader,
+#content #event_detail_xml_link + #sectionheader + .title {
+    font-familty: "Open Sans Light","Open Sans",sans-serif;
+    line-height: 50px;
+    font-size: 1.714em;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #939598;
+    font-weight: normal;
+    clear: left;
+}
+#content #event_detail_xml_link + #sectionheader + .title {
+  font-size: 1.714em !important;
+  color: #27AAE1;
+}
+#content #SKIN .basic .main .ui-widget #eventdetail h2#sectionheader {
+  font-size: 14px;
+  font-familty: "Open Sans Light","Open Sans",sans-serif !important;
+  border-bottom: 1px solid #939598;
+  line-height: 1.4;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.2em;
+  margin-top: 1em;
+}
+#content #SKIN #eventcreate h3 {
+  font-size: 1.2em;
+  border-bottom: 1px solid #939598;
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  line-height: 1.4;
+}
+input[type=submit],
+input[type=button] {
+  -moz-transition: box-shadow 0.25s linear 0s;
+  -webkit-transition: box-shadow 0.25s linear 0s;
+  background-color: #659324;
+  background-image: -moz-linear-gradient(#81bc2e, #659324);
+  background-image: -webkit-linear-gradient(#81bc2e, #659324);
+  background-repeat: repeat-x;
+  border: 0 none;
+  border-radius: 0.25em 0.25em 0.25em 0.25em;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -2px 0 0 rgba(0, 0, 0, 0.2) inset;
+  color: #FFFFFF;
+  display: inline-block;
+  font-family: arial, sans-serif;
+  font-size: 1.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 1.5em;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  float: right;
+}
+#eventdetail input[type=button] {
+  float: none;
+}
+#eventdetail fieldset:last-child input[type=button],
+#myevents input[type=button] {
+  background-color: #999;
+  background-image: -moz-linear-gradient(#BBB, #777);
+  background-image: -webkit-linear-gradient(#BBB, #777);
+  font-size: 0.9em;
+}
+#myevents td input[type=button]:first-child {
+  margin-top: 0;
+}
+#myevents input[type=button] {
+  margin-top: 0.5em;
+}
+input[type=submit]:hover,
+input[type=button]:hover {
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -2px 0 0 rgba(0, 0, 0, 0.2) inset, 0 12px 24px 2px #83C822 inset;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#eventdetail fieldset:last-child input[type=button]:hover,
+#myevents input[type=button]:hover {
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -2px 0 0 rgba(0, 0, 0, 0.2) inset, 0 12px 24px 2px #AAA inset;
+}
+
+input[type=submit]:active,
+input[type=button]:active {
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.1), 0 -2px 0 0 rgba(0, 0, 0, 0.2) inset, 0 12px 24px 2px #83c822 inset;  color: #FFFFFF;
+  text-decoration: none;
+}
+#cke_description {
+  width: 400px !important;
+}
+#use_default_rsvp_box {
+  margin-left: 10px !important;
+}
+#content #SKIN .sectionheader-created .bsd-widget-header {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 1em;
+  color: #fff;
+  background: #659324;
+  border: 1px solid #81BC2E;
+}
+#SKIN .ui-widget-content {
+  border: none;
+  margin-bottom: 1em;
+  float: right;
+  width: 33%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#content .ui-widget-content .bsd-widget-inner-content {
+  margin: 0 10px;
+}
+#SKIN .main .ui-widget-content:first-child{
+  float: none;
+  width: auto;
+  padding: 0;
+}
+#SKIN #invite_form {
+  float: left;
+}
+.share #SKIN #invite_form {
+  width: 65%;
+}
+.share #SKIN form#invite_form,
+form#invite_form div.table_container {
+  width: auto;
+  padding: 1em 20px;
+}
+#SKIN #invite_form a {
+  display: none;
+}
+#SKIN #inviteform a {
+  display: inline-block;
+}
+#rsvp_container #signupform tbody {
+  padding: 0;
+}
+#rsvp_container #signupform tbody textarea {
+  width: 100% !important;
+}
+#content #SKIN .basic .main #eventdetail .title {
+  padding: 0;
+  margin-bottom: 1em;
+}
+#content #SKIN #eventdetail .description, 
+#content #SKIN #eventdetail .description p {
+  padding: 0;
+}
+#content #SKIN #eventdetail .description {
+  border-top: 1px solid #939598;
+  margin-top: 1em;
+  padding-top: 1em;
+}
+#content #SKIN #detailtable {
+  border: none;
+  background: none;
+}
+#content #eventdetail {
+  float: left;
+}
+#content .ui-widget #eventdetail {
+  float: none;
+  width: auto;
+}
+#content #myevents tr {
+  border-bottom: 1px solid #939598;
+}
+#content #myevents tr:first-child,
+#content #myevents tr:last-child {
+  border-bottom: none;
+}
+#content #SKIN #myevents td {
+  padding: 1em 10px;
+}
+#content #SKIN #myevents td:first-child {
+  padding-left: 0;
+}
+.detail #event_rsvp table:first-child {
+  display: none;
+}
+#content #invite_form .table_container {
+  -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+table.typedesc {
+  margin: 1em 0;
+}
+table.typedesc tr:last-child td {
+  border-top: none;
+}
+.detail .venue_map {
+  float: right;
+  width: 39%;
+  height: auto;
+}
+.detail #content #SKIN #detailtable {
+  width: 59%;
+}
+.share #SKIN {
+  width: 100%;
+}

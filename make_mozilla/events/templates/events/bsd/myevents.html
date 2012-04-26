@@ -1,0 +1,154 @@
+{% extends "events/base.html" %}
+
+{% block site_css %}
+    {{ css('bsd_hacks') }}
+   	<link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/skin.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/skins/default/event2/frontend.css" type="text/css" />
+    <link rel="stylesheet" href="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/css/jquery_ui_reset.css" type="text/css" />
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/javascript/bsd.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/ext/yui/build/animation/animation-min.js" type="text/javascript"></script>
+    <script src="//dnwssx4l7gl7s.cloudfront.net/page/static/3.40.5/modules/event2/javascript/event_manage.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+<div id="SKIN" class="module_event2">
+
+
+
+<div class="basic container">
+
+    <div id="control_set">
+        <h1>Event Central</h1>
+        <div id="account_actions">
+                            <span id="login_status">You are logged in as rossbruniges@gmail.com<span class="delimiter">|</span></span>
+                <a href="/page/user/logout?successurl=L3BhZ2UvZXZlbnQvbXlldmVudHM=&_h=yazd4uTG40Cl53QlBiJHcZpThHg">Logout</a><span class="delimiter">|</span>
+            
+            <a href="/page/event/search_simple">Find An Event</a>
+
+                      <span class="delimiter">|</span>
+           <a href="/page/event/create">Plan An Event</a>
+
+           <span class="delimiter">|</span>
+           <a href="/page/event/myevents">Manage Your Events</a>
+           
+                                </div>
+    </div>
+    
+    <div class="main">
+<div id="myevents">
+         <h2 id="sectionheader" >
+      Upcoming Events You Have Created
+    </h2>
+    <div class="table_container">
+    <table id="">
+              <tr>
+          <th class="form_label event_title">Event Title</th>
+          <th class="form_label date_time">Date/Time</th>
+                      <th class="form_label">Attendees</th>
+            <th class="form_label short">Total Pledged</th>                    <th class="button_actions">&nbsp;</th>
+        </tr>
+                  <tr class="odd">
+            <td class="event_title"><a href="/page/event/detail/rtd">Strawberry jam</a></td>
+
+                            
+                                    <td>May 2, 2012 12:00:00 PM
+                    </td>
+                
+            
+                          <td class="short">
+                <em></em>              </td>
+                              <td class="short">
+                                      <em></em>
+                                  </td>
+                                      <td>
+                              <input type="button" value="Edit Event Details" onclick="location.href='/page/event/edit_details?event_id=8';" />
+                <input type="button" value="View Event Listing" onclick="location.href='/page/event/detail/rtd';" />
+                                    <input type="button" value="Delete Event..." onclick="location.href='/page/event/delete/rtd';" />
+                                <input type="button" value="Manage Event" onclick="location.href='/page/event/manage/rtd';" />
+                          </td>
+          </tr>
+                            <tr class="even">
+            <td class="event_title"><a href="/page/event/detail/rtv">Ross' popcorn experience</a></td>
+
+                            
+                                    <td>May 24, 2012 12:00:00 PM
+                    </td>
+                
+            
+                          <td class="short">
+                <em></em>              </td>
+                              <td class="short">
+                                      <em></em>
+                                  </td>
+                                      <td>
+                              <input type="button" value="Edit Event Details" onclick="location.href='/page/event/edit_details?event_id=7';" />
+                <input type="button" value="View Event Listing" onclick="location.href='/page/event/detail/rtv';" />
+                                    <input type="button" value="Delete Event..." onclick="location.href='/page/event/delete/rtv';" />
+                                <input type="button" value="Manage Event" onclick="location.href='/page/event/manage/rtv';" />
+                          </td>
+          </tr>
+                            <tr class="odd">
+            <td class="event_title"><a href="/page/event/detail/rtj">Test RSS links</a></td>
+
+                            
+                                    <td>May 30, 2012 12:00:00 PM
+                    </td>
+                
+            
+                          <td class="short">
+                1              </td>
+                              <td class="short">
+                                      <em></em>
+                                  </td>
+                                      <td>
+                              <input type="button" value="Edit Event Details" onclick="location.href='/page/event/edit_details?event_id=6';" />
+                <input type="button" value="View Event Listing" onclick="location.href='/page/event/detail/rtj';" />
+                                    <input type="button" value="Delete Event..." onclick="location.href='/page/event/delete/rtj';" />
+                                <input type="button" value="Manage Event" onclick="location.href='/page/event/manage/rtj';" />
+                          </td>
+          </tr>
+                            </table>
+    </div>
+             <h2 id="sectionheader" class="notfirst">
+      Upcoming Events You Have Signed Up For
+    </h2>
+    <div class="table_container">
+    <table id="">
+              <tr>
+          <th class="form_label event_title">Event Title</th>
+          <th class="form_label date_time">Date/Time</th>
+                      <th class="form_label short">Will Attend?</th>
+                    <th class="button_actions">&nbsp;</th>
+        </tr>
+                  <tr class="odd">
+            <td class="event_title"><a href="/page/event/detail/rtj">Test RSS links</a></td>
+
+                            
+                                    <td>May 30, 2012 12:00:00 PM
+                    </td>
+                
+            
+                          <td class="short">
+
+                                    Yes                
+                              </td>
+                        <td>
+              
+                                <nobr>
+                  <input type="button" value="Edit Signup" onclick="location.href='/page/event/rsvp_edit/rtl';" />
+                </nobr>
+                
+                          </td>
+          </tr>
+                            </table>
+    </div>
+        </div>
+
+
+    </div><!-- div.main -->
+
+</div><!-- div.basic -->
+
+</div><!-- div#SKIN -->
+{% endblock %}
